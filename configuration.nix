@@ -1,14 +1,22 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: let
+  alejandra =
+    (import (builtins.fetchTarball {
+      url = "https://github.com/kamadorueda/alejandra/tarball/3.0.0";
+      sha256 = "18jm0d5xrxk38hw5sa470zgfz9xzdcyaskjhgjwhnmzd5fgacny4";
+    }) {})
+    .outPath;
+in {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -82,10 +90,8 @@
   users.users.domenico = {
     isNormalUser = true;
     description = "Domenico D'Erasmo";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-      firefox
-      neovim
     ];
   };
 
@@ -100,13 +106,44 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget
-    git
+    wget # wget - web getting
+    git # Git - version control
+    neovim # Neovim - text editor
+    alejandra # Alejandra - Nix formatter
+    kitty # Kitty - terminal emulator
+    rnix-lsp # bil - Nix LSP
+    home-manager # Home manager - Settings for programs
   ];
+
+  # Chromium - web browser
+  programs.chromium = {
+    enable = true;
+    extensions = [
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm"
+    ];
+  };
+
+  # VSCodium -code editor
+  # programs.vscodium = {
+  #   enable = true;
+  #   extensions = with pkgs.vscode-extensions; [
+  #     kamadorueda.alejandra # Alejandra integration
+  #     arrterian.nix-env-selector # Select nix shells in VS Code
+  #     jnoortheen.nix-ide # Nix IDE
+  #   ];
+  #   userSettings = {
+  #     "nix.enableLanguageServer" = true;
+  #     "nix.serverPath" = "nil";
+  #     "files.autoSave" = "afterDelay";
+  #     "files.autoSaveDelay" = 1000;
+  #     "git.autofetch" = true;
+  #     "editor.rulers" = [88];
+  #   };
+  # };
 
   # Add extra options
   nix.settings.experimental-features = "nix-command flakes";
-  
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -133,5 +170,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
 }
