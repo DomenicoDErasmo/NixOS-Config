@@ -137,24 +137,6 @@ in {
     };
   };
 
-  # VSCodium -code editor
-  # programs.vscodium = {
-  #   enable = true;
-  #   extensions = with pkgs.vscode-extensions; [
-  #     kamadorueda.alejandra # Alejandra integration
-  #     arrterian.nix-env-selector # Select nix shells in VS Code
-  #     jnoortheen.nix-ide # Nix IDE
-  #   ];
-  #   userSettings = {
-  #     "nix.enableLanguageServer" = true;
-  #     "nix.serverPath" = "nil";
-  #     "files.autoSave" = "afterDelay";
-  #     "files.autoSaveDelay" = 1000;
-  #     "git.autofetch" = true;
-  #     "editor.rulers" = [88];
-  #   };
-  # };
-
   # Add extra options
   nix.settings.experimental-features = ["nix-command" "flakes"];
 

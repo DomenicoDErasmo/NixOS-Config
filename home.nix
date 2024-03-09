@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "domenico";
@@ -14,6 +16,24 @@
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
+
+  # VSCodium -code editor
+  programs.vscodium = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      kamadorueda.alejandra # Alejandra integration
+      arrterian.nix-env-selector # Select nix shells in VS Code
+      jnoortheen.nix-ide # Nix IDE
+    ];
+    userSettings = {
+      "nix.enableLanguageServer" = true;
+      "nix.serverPath" = "nil";
+      "files.autoSave" = "afterDelay";
+      "files.autoSaveDelay" = 1000;
+      "git.autofetch" = true;
+      "editor.rulers" = [88];
+    };
+  };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
