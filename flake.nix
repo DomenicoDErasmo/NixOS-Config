@@ -1,4 +1,6 @@
 {
+  # build with sudo nixos-rebuild switch --flake ./#default --impure
+  # for some reason, currentSystem can't be resolved without --impure
   description = "Nixos config flake";
 
   inputs = {
@@ -19,7 +21,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit system inputs;};
+      specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
         # inputs.home-manager.nixosModules.default
