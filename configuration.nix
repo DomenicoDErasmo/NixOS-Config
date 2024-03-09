@@ -122,14 +122,6 @@ in {
     home-manager # Home manager - Settings for programs
   ];
 
-  # Chromium - web browser
-  programs.chromium = {
-    enable = true;
-    extensions = [
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm"
-    ];
-  };
-
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
