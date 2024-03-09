@@ -122,6 +122,8 @@ in {
     kitty # Kitty - terminal emulator
     rnix-lsp # bil - Nix LSP
     home-manager # Home manager - Settings for programs
+    pkgs.notion-app-enhanced # Notion - productivity
+    obsidian # Obsidian - notetaker
   ];
 
   home-manager = {

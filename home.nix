@@ -32,6 +32,7 @@
       "files.autoSave" = "afterDelay";
       "files.autoSaveDelay" = 1000;
       "git.autofetch" = true;
+      "git.terminalAuthentication" = false;
       "editor.rulers" = [88];
     };
   };
