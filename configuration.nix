@@ -1,6 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
+# Can also run $ man configuration.nix to check available options
 {
   config,
   pkgs,
@@ -105,6 +106,7 @@ in {
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  # Available packages on search.nixos.org
   environment.systemPackages = with pkgs; [
     wget # wget - web getting
     git # Git - version control
@@ -142,7 +144,7 @@ in {
   # };
 
   # Add extra options
-  nix.settings.experimental-features = "nix-command flakes";
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
