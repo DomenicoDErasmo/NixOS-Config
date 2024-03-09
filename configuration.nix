@@ -2,9 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 # Can also run $ man configuration.nix to check available options
+
+# Build with $ sudo nixos-rebuild switch --flake ./#default --impure
 {
   config,
   pkgs,
+  inputs,
   ...
 }: let
   alejandra =
@@ -17,6 +20,8 @@ in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    # Home manager - /home/domenico/
+    inputs.home-manager.nixosModules.default
   ];
 
   # Bootloader.
@@ -123,6 +128,13 @@ in {
     extensions = [
       "cjpalhdlnbpafiamejdnhcphjbkeiagm"
     ];
+  };
+
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "domenico" = import ./home.nix;
+    };
   };
 
   # VSCodium -code editor
