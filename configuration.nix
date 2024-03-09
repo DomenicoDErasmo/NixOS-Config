@@ -2,7 +2,6 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 # Can also run $ man configuration.nix to check available options
-
 # Build with $ sudo nixos-rebuild switch --flake ./#default --impure
 {
   config,
@@ -109,6 +108,9 @@ in {
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   # Available packages on search.nixos.org
@@ -127,6 +129,15 @@ in {
     users = {
       "domenico" = import ./home.nix;
     };
+  };
+
+  # 1Password - password manager
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    # Certain features, including CLI integration and system authentication support,
+    # require enabling PolKit integration on some desktop environments (e.g. Plasma).
+    polkitPolicyOwners = ["yourUsernameHere"];
   };
 
   # Add extra options
