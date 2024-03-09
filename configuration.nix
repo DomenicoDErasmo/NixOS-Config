@@ -4,7 +4,6 @@
 # Can also run $ man configuration.nix to check available options
 # Build with $ sudo nixos-rebuild switch --flake ./#default --impure
 {
-  config,
   pkgs,
   inputs,
   ...
@@ -96,8 +95,6 @@ in {
     isNormalUser = true;
     description = "Domenico D'Erasmo";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-    ];
   };
 
   # Enable automatic login for the user.
@@ -124,6 +121,7 @@ in {
     home-manager # Home manager - Settings for programs
     pkgs.notion-app-enhanced # Notion - productivity
     obsidian # Obsidian - notetaker
+    neofetch # Neofetch - system info
   ];
 
   home-manager = {
