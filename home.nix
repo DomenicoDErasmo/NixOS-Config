@@ -18,8 +18,9 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   # VSCodium -code editor
-  programs.vscodium = {
+  programs.vscode = {
     enable = true;
+    package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
       kamadorueda.alejandra # Alejandra integration
       arrterian.nix-env-selector # Select nix shells in VS Code
