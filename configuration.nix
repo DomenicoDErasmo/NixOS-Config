@@ -122,6 +122,8 @@ in {
     pkgs.notion-app-enhanced # Notion - productivity
     obsidian # Obsidian - notetaker
     neofetch # Neofetch - system info
+    discord # Discord - VOIP
+    steam # Game distribution platform
   ];
 
   home-manager = {
