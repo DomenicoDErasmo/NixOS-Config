@@ -148,6 +148,29 @@ in {
     dedicatedServer.openFirewall = true;
   };
 
+  # Nixvim
+  programs.nixvim = {
+    enable = true;
+
+    options = {
+      number = true;
+      relativenumber = true;
+    };
+
+    plugins = {
+      lsp = {
+        enable = true;
+        servers = {
+          rust-analyzer = {
+            enable = true;
+            installCargo = true;
+            installRustc = true;
+          };
+        };
+      };
+    };
+  };
+
   # Add extra options
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
