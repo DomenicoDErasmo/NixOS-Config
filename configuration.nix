@@ -123,6 +123,7 @@ in {
     obsidian # Obsidian - notetaker
     neofetch # Neofetch - system info
     discord # Discord - VOIP
+    spotify # Spotify - Music player
   ];
 
   home-manager = {
@@ -139,6 +140,13 @@ in {
     # Certain features, including CLI integration and system authentication support,
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
     polkitPolicyOwners = ["yourUsernameHere"];
+  };
+
+  # Steam - Game distribution platform
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
   };
 
   # Add extra options
