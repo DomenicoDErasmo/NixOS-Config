@@ -167,7 +167,7 @@
                 extraArgs = [
                   "--"
                   "-D"
-                  "correctness"
+                  "clippy::correctness"
                   "-D"
                   "clippy::pedantic"
                   "-D"
