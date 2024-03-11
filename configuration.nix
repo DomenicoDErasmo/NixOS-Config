@@ -7,14 +7,7 @@
   pkgs,
   inputs,
   ...
-}: let
-  alejandra =
-    (import (builtins.fetchTarball {
-      url = "https://github.com/kamadorueda/alejandra/tarball/3.0.0";
-      sha256 = "18jm0d5xrxk38hw5sa470zgfz9xzdcyaskjhgjwhnmzd5fgacny4";
-    }) {})
-    .outPath;
-in {
+}: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -114,7 +107,7 @@ in {
   environment.systemPackages = with pkgs; [
     wget # wget - web getting
     git # Git - version control
-    alejandra # Alejandra - Nix formatter
+    inputs.alejandra # Alejandra - Nix formatter
     kitty # Kitty - terminal emulator
     nil # nil - Nix LSP
     home-manager # Home manager - Settings for programs

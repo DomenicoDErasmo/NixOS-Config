@@ -1,6 +1,5 @@
 {
-  # build with sudo nixos-rebuild switch --flake ./#default --impure
-  # for some reason, currentSystem can't be resolved without --impure
+  # build with sudo nixos-rebuild switch --flake ./#default
   description = "Nixos config flake";
 
   inputs = {
@@ -15,6 +14,11 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    alejandra = {
+      url = "github:kamadorueda/alejandra/3.0.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -22,8 +26,11 @@
     nixpkgs,
     home-manager,
     nixvim,
+    alejandra,
     ...
-  } @ inputs: {
+  } @ inputs: let
+    system = "x86_64-linux";
+  in {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {inherit inputs;};
@@ -31,6 +38,7 @@
         ./configuration.nix
         inputs.home-manager.nixosModules.default
         nixvim.nixosModules.nixvim
+        {environment.systemPackages = [alejandra.defaultPackage.${system}];}
       ];
     };
   };
