@@ -158,15 +158,43 @@ in {
     };
 
     plugins = {
+      # Builtin LSP
       lsp = {
         enable = true;
         servers = {
+          # Rust
           rust-analyzer = {
             enable = true;
             installCargo = true;
             installRustc = true;
+            settings = {
+              checkOnSave = true;
+              check = {
+                command = "clippy";
+                extraArgs = [
+                  "-D"
+                  "clippy::missing_inline_in_public_items"
+                ];
+              };
+            };
+          };
+          # Nix
+          nil_ls = {
+            enable = true;
           };
         };
+      };
+      # LSP Lines
+      lsp-lines = {
+        enable = true;
+      };
+      # Fugitive - Git wrapper
+      fugitive = {
+        enable = true;
+      };
+      # Airline - Status bar
+      airline = {
+        enable = true;
       };
     };
   };
