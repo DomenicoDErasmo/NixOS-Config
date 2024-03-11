@@ -172,6 +172,7 @@ in {
               check = {
                 command = "clippy";
                 extraArgs = [
+                  "--"
                   "-D"
                   "clippy::missing_inline_in_public_items"
                 ];
