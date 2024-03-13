@@ -1,8 +1,13 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-# Can also run $ man configuration.nix to check available options
-# Build with $ sudo nixos-rebuild switch --flake ./#default --impure
+#
+# Build with $ sudo nixos-rebuild switch --flake ./#default
+#
+# Check options at
+# - https://mynixos.com/
+# - man configuration.nix
+# - https://search.nixos.org/
 {
   pkgs,
   inputs,

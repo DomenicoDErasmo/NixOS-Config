@@ -19,7 +19,7 @@
 
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    ./features/kitty.nix
+    ./features/kitty/kitty.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-light;
@@ -58,7 +58,7 @@
     enable = true;
     settings = {
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
-      "org/gnome/desktop/wm/preferences".button-layout = "menu:maximize,minimize,close";
+      "org/gnome/desktop/wm/preferences".button-layout = "menu:minimize,maximize,close";
     };
   };
 
