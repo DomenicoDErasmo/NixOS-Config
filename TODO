@@ -1,0 +1,17 @@
+Colors
+- Pywal or pywal-equivalent setup
+- Background image picker, such as waypaper, shuffle between images
+- Image source
+    - Big collecton: https://github.com/dharmx/walls
+    - Make a some themes
+        - All anime?
+        - All studio ghibli?
+        - All nature?
+Development
+- Neovim config
+    - Get clippy fully working
+    - Rustfmt on save
+    - Other extensions
+    - Hook colors up with Pywal if not already set up
+- Shell.nix for Python
+- Research whether shell.nix goes in development folder or in config folder
