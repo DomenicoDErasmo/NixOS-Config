@@ -62,6 +62,18 @@
     };
   };
 
+  # Git - Version control
+  programs.git = {
+    enable = true;
+    userName = "Domenico D'Erasmo";
+    userEmail = "domenicoderasmo99@gmail.com";
+    extraConfig = {
+      core = {
+        editor = "nvim";
+      };
+    };
+  };
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [

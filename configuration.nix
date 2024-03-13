@@ -132,7 +132,6 @@
   # Available packages on search.nixos.org
   environment.systemPackages = with pkgs; [
     wget # wget - web getting
-    git # Git - version control
     inputs.alejandra # Alejandra - Nix formatter
     kitty # Kitty - terminal emulator
     nil # nil - Nix LSP
