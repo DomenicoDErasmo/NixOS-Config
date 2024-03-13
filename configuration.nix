@@ -141,6 +141,7 @@
     neofetch # Neofetch - system info
     discord # Discord - VOIP
     spotify # Spotify - Music player
+    pywal # Pywal - Color theme from image
   ];
 
   home-manager = {
