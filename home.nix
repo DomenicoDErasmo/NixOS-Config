@@ -21,6 +21,8 @@
     inputs.nix-colors.homeManagerModules.default
   ];
 
+  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-light;
+
   # VSCodium -code editor
   programs.vscode = {
     enable = true;
@@ -47,6 +49,16 @@
     extensions = [
       "cjpalhdlnbpafiamejdnhcphjbkeiagm"
     ];
+  };
+
+  # GNOME - GUI
+  # Settings: https://github.com/GNOME/gsettings-desktop-schemas/tree/master/schemas
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+      "org/gnome/desktop/wm/preferences".button-layout = "menu:maximize,minimize,close";
+    };
   };
 
   # The home.packages option allows you to install Nix packages into your
