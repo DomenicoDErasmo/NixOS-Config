@@ -19,6 +19,7 @@
 
   imports = [
     inputs.nix-colors.homeManagerModules.default
+    ./features/kitty.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-light;
