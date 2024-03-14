@@ -142,6 +142,7 @@
     discord # Discord - VOIP
     spotify # Spotify - Music player
     pywal # Pywal - Color theme from image
+    unzip # Unzip - Unzip zipped archives
   ];
 
   home-manager = {
