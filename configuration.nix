@@ -168,6 +168,15 @@
     dedicatedServer.openFirewall = true;
   };
 
+  # Bash
+  programs.bash = {
+    shellAliases = {
+      c = "clear";
+      eg = "egrep";
+      g = "grep";
+    };
+  };
+
   # Nixvim
   programs.nixvim = {
     enable = true;
