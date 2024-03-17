@@ -1,12 +1,6 @@
-Colors
-- Pywal or pywal-equivalent setup
-- Background image picker, such as waypaper, shuffle between images
-- Image source
-    - Big collecton: https://github.com/dharmx/walls
-    - Make a some themes
-        - All anime?
-        - All studio ghibli?
-        - All nature?
+Hyprland
+- How to get working with available terminal on login?
+- Use pywal to change terminal colors
 Development
 - Neovim config
     - Get clippy fully working
