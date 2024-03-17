@@ -23,11 +23,17 @@
     nix-colors = {
       url = "github:misterio77/nix-colors";
     };
+
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
+    hyprland,
     home-manager,
     nixvim,
     alejandra,
@@ -43,6 +49,8 @@
         inputs.home-manager.nixosModules.default
         nixvim.nixosModules.nixvim
         {environment.systemPackages = [alejandra.defaultPackage.${system}];}
+        hyprland.nixosModules.default
+        {programs.hyprland.enable = true;}
       ];
     };
   };
