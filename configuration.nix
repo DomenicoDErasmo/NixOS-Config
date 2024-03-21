@@ -150,6 +150,9 @@
     spotify # Spotify - Music player
     pywal # Pywal - Color theme from image
     unzip # Unzip - Unzip zipped archives
+    waybar # Waybar - Configurable taskbar
+    rofi-wayland # rofi-wayland - App switcher
+    swww # swww - Wallpaper selecter
   ];
 
   home-manager = {

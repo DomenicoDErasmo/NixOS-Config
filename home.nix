@@ -48,7 +48,45 @@
   programs.chromium = {
     enable = true;
     extensions = [
+      # uBlock Origin - Ad Blocker
       "cjpalhdlnbpafiamejdnhcphjbkeiagm"
+    ];
+  };
+
+  # Hyprland - Window Manager
+  wayland.windowManager.hyprland = let
+    startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+      waybar &
+      swww init &
+      sleep 1
+    '';
+  in {
+    enable = true;
+    settings = {
+      exec-once = ''${startupScript}/bin/start'';
+      bind = [
+        "SUPER, Q, exec, kitty"
+        "SUPER, M, exit"
+      ];
+    };
+  };
+
+  # Waybar - Taskbar
+  programs.waybar = {
+    enable = true;
+    settings = [
+      {
+        modules-left = [
+          "hyprland/workspaces"
+        ];
+        modules-center = [
+          "hyprland/window"
+        ];
+        modules-right = [
+          "battery"
+          "clock"
+        ];
+      }
     ];
   };
 

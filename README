@@ -1,0 +1,5 @@
+Installing
+
+1. Git clone this repository to /etc/nixos
+2. Run nixos-generate-config to update hardware-configuration.nix
+3. sudo nixos-rebuild switch --flake ./#default 
