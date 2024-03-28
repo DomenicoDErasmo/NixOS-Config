@@ -131,6 +131,27 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
+  # swww on startup
+  # systemd.services.wallpaper = {
+  #   path = ["${pkgs.swww}"];
+  #   script = ''
+  #     /etc/nixos/home/swww/wallpaper.sh
+  #   '';
+  #   wantedBy = ["multi-user.target"];
+  #   serviceConfig = {
+  #     Type = "oneshot";
+  #   };
+  # };
+
+  # systemd.timers.wallpaper = {
+  #   wantedBy = ["timers.target"];
+  #   timerConfig = {
+  #     OnBootSec = "10s";
+  #     OnUnitActiveSec = "10s";
+  #     Unit = "wallpaper.service";
+  #   };
+  # };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -153,6 +174,7 @@
     waybar # Waybar - Configurable taskbar
     rofi-wayland # rofi-wayland - App switcher
     swww # swww - Wallpaper selecter
+    mako # mako - Notification daemon
   ];
 
   home-manager = {
@@ -185,6 +207,11 @@
       eg = "egrep";
       g = "grep";
     };
+    loginShellInit = ''
+      if [ "$(tty)" = "/dev/tty1" ];then
+        exec Hyprland
+      fi
+    '';
   };
 
   # Nixvim

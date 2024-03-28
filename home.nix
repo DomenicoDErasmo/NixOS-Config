@@ -19,7 +19,7 @@
 
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    ./features/kitty/kitty.nix
+    ./home/kitty/kitty.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-light;
@@ -32,6 +32,7 @@
       kamadorueda.alejandra # Alejandra integration
       arrterian.nix-env-selector # Select nix shells in VS Code
       jnoortheen.nix-ide # Nix IDE
+      timonwong.shellcheck # ShellCheck
     ];
     userSettings = {
       "nix.enableLanguageServer" = true;
@@ -58,7 +59,8 @@
     startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
       waybar &
       swww init &
-      sleep 1
+      sleep 1 &
+      mako
     '';
   in {
     enable = true;
@@ -66,7 +68,9 @@
       exec-once = ''${startupScript}/bin/start'';
       bind = [
         "SUPER, Q, exec, kitty"
-        "SUPER, M, exit"
+        "SUPER, W, exec, waybar"
+        "SUPER, C, killactive"
+        "ALT, TAB, exec, rofi -show drun -show-icons"
       ];
     };
   };
@@ -74,18 +78,26 @@
   # Waybar - Taskbar
   programs.waybar = {
     enable = true;
+    style = ./home/waybar/style.css;
     settings = [
       {
         modules-left = [
-          "hyprland/workspaces"
+          "custom/rofi"
         ];
         modules-center = [
           "hyprland/window"
         ];
         modules-right = [
-          "battery"
+          "cpu"
           "clock"
         ];
+        "custom/rofi" = {
+          "format" = "Apps";
+          "on-click" = "rofi -show drun";
+        };
+        clock = {
+          format = "{:%Y-%m-%d   |   %I:%M %p}";
+        };
       }
     ];
   };

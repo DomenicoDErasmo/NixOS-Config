@@ -1,0 +1,35 @@
+window#waybar {
+    background: transparent;
+    /*    background-color: rgba(43, 48, 59, 0.5); */
+    /*    border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+  }
+
+  #custom-rofi {
+    background-color: gray;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  #cpu {
+    background-color: green;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  #clock {
+    background-color: black;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  #window {
+    margin: 2px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: rgba(0,0,0,0.3);
+    font-size:14px;
+    font-weight: bold;
+  }
