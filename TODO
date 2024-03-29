@@ -1,7 +1,6 @@
 Hyprland
-- How to get working with Home Manager?
-- How to get working with available terminal on login?
-- Use pywal to change terminal colors
+- How to change other Hyprland colors?
+- How to add icons and styling to Waybar modules?
 
 Development
 - Neovim config

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{...}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "domenico";
@@ -18,111 +14,15 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   imports = [
-    inputs.nix-colors.homeManagerModules.default
+    ./home/bash/bash.nix
+    ./home/chromium/chromium.nix
+    ./home/git/git.nix
+    ./home/hyprland/hyprland.nix
     ./home/kitty/kitty.nix
+    ./home/nixvim/nixvim.nix
+    ./home/vscodium/vscodium.nix
+    ./home/waybar/waybar.nix
   ];
-
-  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-light;
-
-  # VSCodium -code editor
-  programs.vscode = {
-    enable = true;
-    package = pkgs.vscodium;
-    extensions = with pkgs.vscode-extensions; [
-      kamadorueda.alejandra # Alejandra integration
-      arrterian.nix-env-selector # Select nix shells in VS Code
-      jnoortheen.nix-ide # Nix IDE
-      timonwong.shellcheck # ShellCheck
-    ];
-    userSettings = {
-      "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nil";
-      "files.autoSave" = "afterDelay";
-      "files.autoSaveDelay" = 1000;
-      "git.autofetch" = true;
-      "git.terminalAuthentication" = false;
-      "editor.rulers" = [88];
-    };
-  };
-
-  # Chromium - web browser
-  programs.chromium = {
-    enable = true;
-    extensions = [
-      # uBlock Origin - Ad Blocker
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm"
-    ];
-  };
-
-  # Hyprland - Window Manager
-  wayland.windowManager.hyprland = let
-    startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-      waybar &
-      swww init &
-      sleep 1 &
-      mako
-    '';
-  in {
-    enable = true;
-    settings = {
-      exec-once = ''${startupScript}/bin/start'';
-      bind = [
-        "SUPER, Q, exec, kitty"
-        "SUPER, W, exec, waybar"
-        "SUPER, C, killactive"
-        "ALT, TAB, exec, rofi -show drun -show-icons"
-      ];
-    };
-  };
-
-  # Waybar - Taskbar
-  programs.waybar = {
-    enable = true;
-    style = ./home/waybar/style.css;
-    settings = [
-      {
-        modules-left = [
-          "custom/rofi"
-        ];
-        modules-center = [
-          "hyprland/window"
-        ];
-        modules-right = [
-          "cpu"
-          "clock"
-        ];
-        "custom/rofi" = {
-          "format" = "Apps";
-          "on-click" = "rofi -show drun";
-        };
-        clock = {
-          format = "{:%Y-%m-%d   |   %I:%M %p}";
-        };
-      }
-    ];
-  };
-
-  # GNOME - GUI
-  # Settings: https://github.com/GNOME/gsettings-desktop-schemas/tree/master/schemas
-  dconf = {
-    enable = true;
-    settings = {
-      "org/gnome/desktop/interface".color-scheme = "prefer-dark";
-      "org/gnome/desktop/wm/preferences".button-layout = "menu:minimize,maximize,close";
-    };
-  };
-
-  # Git - Version control
-  programs.git = {
-    enable = true;
-    userName = "Domenico D'Erasmo";
-    userEmail = "domenicoderasmo99@gmail.com";
-    extraConfig = {
-      core = {
-        editor = "nvim";
-      };
-    };
-  };
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
