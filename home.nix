@@ -20,6 +20,7 @@
     ./home/hyprland/hyprland.nix
     ./home/kitty/kitty.nix
     ./home/nixvim/nixvim.nix
+    ./home/rofi/rofi.nix
     ./home/vscodium/vscodium.nix
     ./home/waybar/waybar.nix
   ];
