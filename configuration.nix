@@ -188,6 +188,7 @@
     users = {
       "domenico" = import ./home.nix;
     };
+    useGlobalPkgs = true;
   };
 
   # 1Password - password manager

@@ -1,13 +1,13 @@
 {pkgs, ...}: {
-  # VSCodium -code editor
+  # VSCode -code editor
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
       kamadorueda.alejandra # Alejandra integration
-      arrterian.nix-env-selector # Select nix shells in VS Code
+      arrterian.nix-env-selector # Select nix shells from VS Code
       jnoortheen.nix-ide # Nix IDE
       timonwong.shellcheck # ShellCheck
+      eamodio.gitlens # GitLens - more Git context
     ];
     userSettings = {
       "nix.enableLanguageServer" = true;
