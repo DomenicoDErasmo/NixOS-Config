@@ -1,5 +1,6 @@
 {...}: {
   programs.rofi = {
-    theme = ./theme.rasi;
+    theme = ''
+    '';
   };
 }
