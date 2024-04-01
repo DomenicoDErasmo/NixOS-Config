@@ -152,7 +152,7 @@
     wantedBy = ["timers.target"];
     timerConfig = {
       OnBootSec = "10s";
-      OnUnitActiveSec = "5m";
+      OnUnitActiveSec = "10m";
       Unit = "wallpaper.service";
     };
   };
