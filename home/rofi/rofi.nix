@@ -1,5 +1,5 @@
 {...}: {
-  programs.rofi-wayland = {
+  programs.rofi = {
     theme = ./theme.rasi;
   };
 }
