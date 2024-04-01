@@ -6,7 +6,6 @@
     settings = [
       {
         modules-left = [
-          "custom/rofi"
         ];
         modules-center = [
           "hyprland/window"
@@ -23,10 +22,27 @@
           format = "Apps";
           "on-click" = "rofi -show drun -show-icons";
         };
+        # The hollow squares are icons taken from Ubuntu Nerd Font.
+        # I couldn't get these to show up.
         clock = {
-          format = "{:%Y-%m-%d   |   %I:%M %p}";
+          format = "    {:%Y-%m-%d      %I:%M %p}";
+        };
+        cpu = {
+          format = "    {usage}%";
+        };
+        disk = {
+          format = "    {percentage_used}%";
         };
         layer = "top";
+        memory = {
+          format = "󰍛    {percentage}%";
+        };
+        pulseaudio = {
+          format = "    {volume}";
+        };
+        temperature = {
+          format = "    {temperatureC}°C";
+        };
       }
     ];
   };

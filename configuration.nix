@@ -93,6 +93,11 @@
     variant = "";
   };
 
+  # Fonts
+  fonts.packages = with pkgs; [
+    nerdfonts
+  ];
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -161,6 +166,7 @@
   environment.systemPackages = with pkgs; [
     wget # wget - web getting
     kitty # Kitty - terminal emulator
+    alejandra # Alejandra - Nix formatter
     nil # nil - Nix LSP
     home-manager # Home manager - Settings for programs
     pkgs.notion-app-enhanced # Notion - productivity
@@ -175,7 +181,6 @@
     swww # swww - Wallpaper selecter
     mako # mako - Notification daemon
     ripgrep # ripgrep - Faster grep
-    alejandra # Alejandra - Nix formatter
   ];
 
   home-manager = {

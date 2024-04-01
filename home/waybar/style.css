@@ -3,44 +3,32 @@ window#waybar {
     color: #ffffff;
   }
 
-  #custom-rofi {
-    background-color: gray;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
   #pulseaudio {
-    background-color: purple;
     padding-left: 8px;
     padding-right: 8px;
   }
 
   #disk {
-    background-color: goldenrod;
     padding-left: 8px;
     padding-right: 8px;
   }
 
   #cpu {
-    background-color: green;
     padding-left: 8px;
     padding-right: 8px;
   }
 
   #clock {
-    background-color: black;
     padding-left: 8px;
     padding-right: 8px;
   }
 
   #temperature {
-    background-color: red;
     padding-left: 8px;
     padding-right: 8px;
   }
 
   #memory {
-    background-color: blue;
     padding-left: 8px;
     padding-right: 8px;
   }
