@@ -1,6 +1,5 @@
-{...}: {
+{pkgs, ...}: {
   programs.rofi = {
-    theme = ''
-    '';
+    theme = "${pkgs.rofi-wayland}/share/rofi/themes/Arc-Dark.rasi";
   };
 }
