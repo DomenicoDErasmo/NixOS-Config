@@ -8,6 +8,7 @@
       jnoortheen.nix-ide # Nix IDE
       timonwong.shellcheck # ShellCheck
       eamodio.gitlens # GitLens - more Git context
+      aeschli.vscode-css-formatter # CSS Formatter
     ];
     userSettings = {
       "nix.enableLanguageServer" = true;

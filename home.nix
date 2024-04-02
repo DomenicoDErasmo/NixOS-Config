@@ -21,7 +21,7 @@
     ./home/kitty/kitty.nix
     ./home/nixvim/nixvim.nix
     ./home/rofi/rofi.nix
-    ./home/vscodium/vscodium.nix
+    ./home/vscode/vscode.nix
     ./home/waybar/waybar.nix
   ];
 

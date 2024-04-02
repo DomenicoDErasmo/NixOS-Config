@@ -6,6 +6,7 @@
     settings = [
       {
         modules-left = [
+          "hyprland/workspaces"
         ];
         modules-center = [
           "hyprland/window"
@@ -33,6 +34,12 @@
         disk = {
           format = "    {percentage_used}%";
         };
+        "hyprland/workspaces" = {
+          "format" = "{icon}";
+          "on-scroll-up" = "hyprctl dispatch workspace e+1";
+          "on-scroll-down" = "hyprctl dispatch workspace e-1";
+        };
+
         layer = "top";
         memory = {
           format = "󰍛    {percentage}%";
