@@ -234,14 +234,17 @@
           };
         };
       };
+
       # LSP Lines
       lsp-lines = {
         enable = true;
       };
+
       # Fugitive - Git wrapper
       fugitive = {
         enable = true;
       };
+
       # Airline - Status bar
       airline = {
         enable = true;
