@@ -3,9 +3,7 @@
   programs.bash = {
     enable = true;
     initExtra = ''
-      wal -c
-      wal -i ~/wallpaper
-      wal -c
+      wallust run ~/wallpaper -p dark16 -w
     '';
   };
 }

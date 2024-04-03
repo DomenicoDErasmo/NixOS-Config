@@ -12,7 +12,8 @@
           "hyprland/window"
         ];
         modules-right = [
-          "pulseaudio"
+          "custom/sound_icon"
+          "pulseaudio/slider"
           "disk"
           "temperature"
           "memory"
@@ -24,9 +25,12 @@
           "on-click" = "rofi -show drun -show-icons";
         };
         # The hollow squares are icons taken from Ubuntu Nerd Font.
-        # I couldn't get these to show up.
+        # I couldn't get these to show up in VSCode.
         clock = {
           format = "    {:%Y-%m-%d      %I:%M %p}";
+        };
+        "custom/sound_icon" = {
+          format = "󰕾";
         };
         cpu = {
           format = "    {usage}%";
@@ -49,8 +53,10 @@
         memory = {
           format = "󰍛    {percentage}%";
         };
-        pulseaudio = {
-          format = "    {volume}";
+        "pulseaudio/slider" = {
+          min = 0;
+          max = 100;
+          orientation = "horizontal";
         };
         temperature = {
           format = "    {temperatureC}°C";

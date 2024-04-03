@@ -138,7 +138,7 @@
 
   # swww on startup
   systemd.user.services.wallpaper = {
-    path = ["${pkgs.swww}" "${pkgs.pywal}"];
+    path = ["${pkgs.swww}" "${pkgs.wallust}"];
     script = ''
       /etc/nixos/home/swww/wallpaper.sh
     '';
@@ -174,7 +174,7 @@
     neofetch # Neofetch - system info
     discord # Discord - VOIP
     spotify # Spotify - Music player
-    pywal # Pywal - Color theme from image
+    wallust # Wallust - Color theme from image
     unzip # Unzip - Unzip zipped archives
     waybar # Waybar - Configurable taskbar
     rofi-wayland # rofi-wayland - App switcher
