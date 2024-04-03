@@ -4,10 +4,10 @@ Other tiling methods?
 Mako styling (theme, rounded edges?)
 
 Development
+- Essential extensions (example: https://github.com/elythh/nixvim)
 - Neovim config
-    - Get clippy fully working
-    - Rustfmt on save
-    - Other extensions
-    - Hook colors up with Pywal if not already set up
+    - Rust
+        - Get clippy fully working
+        - Rustfmt on save
 - Shell.nix for Python
 - Research whether shell.nix goes in development folder or in config folder
