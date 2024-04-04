@@ -214,6 +214,13 @@
     '';
   };
 
+  # Steam - Game library
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
   # Add extra options
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
