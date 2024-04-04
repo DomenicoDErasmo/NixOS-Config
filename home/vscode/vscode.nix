@@ -9,6 +9,9 @@
       timonwong.shellcheck # ShellCheck
       eamodio.gitlens # GitLens - more Git context
       rust-lang.rust-analyzer # rust-analyzer - Rust LSP
+      vadimcn.vscode-lldb # LLDB - Debugging
+      tamasfe.even-better-toml # TOML syntax highlighting
+      serayuzgur.crates # Cargo crate completion
     ];
     userSettings = {
       "nix.enableLanguageServer" = true;
