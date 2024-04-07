@@ -4,5 +4,4 @@ Other tiling methods?
 Mako styling (theme, rounded edges?)
 
 Development
-- Recreate (and document) the steps I took to get clippy lints working
-- Nixvim setup (after VSCode)
+- Nixvim setup
