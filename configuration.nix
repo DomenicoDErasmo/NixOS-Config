@@ -182,6 +182,9 @@
     mako # mako - Notification daemon
     ripgrep # ripgrep - Faster grep
     mgba # mgba - GBA emulator
+    unrar # rar - Unzip RAR files
+    libreoffice-qt # LibreOffice - Microsoft Word replacement
+    hunspell # LibreOffice spellcheck
   ];
 
   home-manager = {
