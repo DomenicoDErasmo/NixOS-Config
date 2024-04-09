@@ -218,6 +218,13 @@
     '';
   };
 
+  # nix-ld - Dynamically linked executables
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = [
+    # Add any missing dynamic libraries for unpackaged programs
+    # here, NOT in environment.systemPackages
+  ];
+
   # Add extra options
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
