@@ -169,7 +169,6 @@
     alejandra # Alejandra - Nix formatter
     nil # nil - Nix LSP
     home-manager # Home manager - Settings for programs
-    pkgs.notion-app-enhanced # Notion - productivity
     obsidian # Obsidian - notetaker
     neofetch # Neofetch - system info
     discord # Discord - VOIP
