@@ -21,8 +21,9 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
   boot.loader.grub.configurationLimit = 15;
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -126,6 +127,7 @@
     isNormalUser = true;
     description = "Domenico D'Erasmo";
     extraGroups = ["networkmanager" "wheel"];
+    password = "test";
   };
 
   # Enable automatic login for the user.
@@ -210,10 +212,11 @@
       eg = "egrep";
       g = "grep";
     };
+    # Doesn't work well in Virtualbox, so I've disabled this
     loginShellInit = ''
-      if [ "$(tty)" = "/dev/tty1" ];then
-        exec Hyprland
-      fi
+      # if [ "$(tty)" = "/dev/tty1" ];then
+      #   exec Hyprland
+      # fi
     '';
   };
 
