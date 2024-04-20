@@ -127,7 +127,7 @@
     isNormalUser = true;
     description = "Domenico D'Erasmo";
     extraGroups = ["networkmanager" "wheel"];
-    password = "test";
+    password = "";
   };
 
   # Enable automatic login for the user.
@@ -182,7 +182,6 @@
     swww # swww - Wallpaper selecter
     mako # mako - Notification daemon
     ripgrep # ripgrep - Faster grep
-    mgba # mgba - GBA emulator
     unrar # rar - Unzip RAR files
     libreoffice-qt # LibreOffice - Microsoft Word replacement
     hunspell # LibreOffice spellcheck
