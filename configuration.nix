@@ -10,7 +10,11 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./main-user.nix
   ];
+
+  main-user.enable = true;
+  main-user.userName = "domenico";
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -76,6 +80,7 @@
     vscode
     obsidian
     ungoogled-chromium
+    alejandra
   ];
 
   # Allow flakes
