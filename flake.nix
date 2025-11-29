@@ -21,7 +21,7 @@
     nixosConfigurations.domenico = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./configuration.nix
+        ./hosts/main_host/configuration.nix
         inputs.home-manager.nixosModules.default
       ];
     };
