@@ -1,2 +1,11 @@
 result/
 .vscode/
+
+# Allow
+
+# Explicitly listing this because intuitively, we wouldn't want to include a hardware
+# specific file in our set of git tracked files. 
+
+# However, flakes only work with git tracked files, meaning hardware-configuration.nix 
+# inclusion in git repos is DIRECTLY COUPLED to your ability to use flakes.
+!hardware-configuration.nix
