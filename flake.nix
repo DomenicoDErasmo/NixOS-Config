@@ -22,7 +22,6 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/main_host/configuration.nix
-        inputs.home-manager.nixosModules.default
       ];
     };
   };
