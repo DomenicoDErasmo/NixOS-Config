@@ -75,6 +75,7 @@
     git
     vscode
     obsidian
+    ungoogled-chromium
   ];
 
   # Allow flakes
