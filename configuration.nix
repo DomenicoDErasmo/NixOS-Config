@@ -51,7 +51,7 @@
     specialArgs = {inherit inputs;};
     users = {
       "domenico" = import ./home.nix;
-    }
+    };
   };
 
   # Allow flakes
