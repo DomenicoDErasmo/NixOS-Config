@@ -1,0 +1,14 @@
+# TODO List
+
+- [ ] Home Manager
+- [ ] Basic shell aliases (c for clear, flog)
+- [ ] Get other packages downloaded
+    - [ ] Obsidian
+- [ ] Update VScode to latest version
+- [ ] Get GitHub working
+- [ ] Extensions in VSCode for development
+    - [ ] Shellcheck
+    - [ ] Markdownlint
+- [ ] Proper Nix IntelliSense
+- [ ] Neovim Config
+- [ ] Hyprland
