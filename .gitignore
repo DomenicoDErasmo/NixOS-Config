@@ -1,1 +1,3 @@
 result/
+# This is hardware-specific should be rebuild with sudo nixos-generate-config
+hardware-configuration.nix
