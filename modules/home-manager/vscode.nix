@@ -15,12 +15,27 @@
         fill-labs.dependi # Cargo crate completion
       ];
       userSettings = {
+        "explorer.confirmDragAndDrop" = false;
+        "explorer.confirmDelete" = false;
         "files.autoSave" = "afterDelay";
         "files.autoSaveDelay" = 1000;
         "git.autofetch" = true;
         "git.terminalAuthentication" = false;
         "git.confirmSync" = false;
         "editor.rulers" = [88];
+
+        # Nix
+        "nix.serverPath" = "nixd";
+        "nixEnvSelector.nixFile" = "\$\{workspaceFolder\}/flake.nix";
+        "nix.enableLanguageServer" = true;
+        "nixpkgs" = {
+          "expr" = "import <nixpkgs> { }";
+        };
+        "formatting" = {
+          "command" = ["alejandra"];
+        };
+
+        # ZSH terminal
         "terminal.integrated.profiles.linux" = {
           "Zsh" = {
             "path" = "${pkgs.zsh}/bin/zsh";
@@ -28,6 +43,8 @@
           };
         };
         "terminal.integrated.defaultProfile.linux" = "Zsh";
+
+        # Rust
         "rust-analyzer.check.command" = "clippy";
         "[rust]" = {
           "editor.defaultFormatter" = "rust-lang.rust-analyzer";
