@@ -44,11 +44,15 @@
     zsh
   ];
 
+  # Prevent the new user dialog in zsh
+  system.userActivationScripts.zshrc = "touch .zshrc";
+
   users.users.domenico = {
       isNormalUser = true;
       initialPassword = "domo";
       description = "Domenico D'Erasmo";
       extraGroups = ["networkmanager" "wheel"];
+      shell = pkgs.zsh;
     };
 
   home-manager = {
