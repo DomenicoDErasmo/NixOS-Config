@@ -1,9 +1,7 @@
 # TODO List
 
 - [X] Home Manager
-- [ ] LSP setup
-    [ ] Formatting
-    [ ] 
+- [X] Nix LSP setup
 - [ ] Basic shell setup
     - [X] Aliases
     - [ ] Functions (flog)
