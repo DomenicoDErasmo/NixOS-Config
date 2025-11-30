@@ -11,12 +11,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./main-user.nix
     inputs.home-manager.nixosModules.default
   ];
-
-  main-user.enable = true;
-  main-user.userName = "domenico";
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -43,9 +39,17 @@
     git
     vscode
     obsidian
-    ungoogled-chromium
+    chromium
     alejandra
+    zsh
   ];
+
+  users.users.domenico = {
+      isNormalUser = true;
+      initialPassword = "domo";
+      description = "Domenico D'Erasmo";
+      extraGroups = ["networkmanager" "wheel"];
+    };
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
