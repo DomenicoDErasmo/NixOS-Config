@@ -1,9 +1,12 @@
 # TODO List
 
-- [ ] Home Manager
-- [ ] Basic shell aliases (c for clear, flog)
+- [X] Home Manager
+- [ ] Basic shell setup
+    - [X] Aliases
+    - [ ] Functions (flog)
+    - [ ] Powerlevel10K
 - [ ] Get other packages downloaded
-    - [ ] Obsidian
+    - [X] Obsidian
 - [ ] Update VScode to latest version
 - [ ] Get GitHub working
 - [ ] Extensions in VSCode for development

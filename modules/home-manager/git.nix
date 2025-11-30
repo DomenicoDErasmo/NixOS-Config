@@ -2,11 +2,13 @@
   # Git - Version control
   programs.git = {
     enable = true;
-    userName = "Domenico D'Erasmo";
-    userEmail = "domenicoderasmo99@gmail.com";
-    extraConfig = {
+    settings = {
       core = {
         editor = "nvim";
+      };
+      user = {
+        name = "Domenico D'Erasmo";
+        email = "domenicoderasmo99@gmail.com";
       };
     };
   };
