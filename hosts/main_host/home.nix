@@ -2,7 +2,9 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  chromiumDesktop = "chromium.desktop";
+in {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "domenico";
@@ -90,6 +92,19 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
+
+  # Set environment variables
+  home.sessionVariables = {
+    BROWSER = "chromium";
+  };
+
+  # Set default apps for xdg-open
+  xdg.configFile."mimeapps.list".text = ''
+    [Default Applications]
+    x-scheme-handler/http=${chromiumDesktop}
+    x-scheme-handler/https=${chromiumDesktop}
+    text/html=${chromiumDesktop}
+  '';
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
