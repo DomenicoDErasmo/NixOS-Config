@@ -18,6 +18,7 @@
   imports = [
     ../../modules/home-manager/chromium.nix
     ../../modules/home-manager/git.nix
+    ../../modules/home-manager/vscode.nix
     ../../modules/home-manager/zsh.nix
   ];
 
