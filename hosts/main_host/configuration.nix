@@ -45,7 +45,8 @@
   ];
 
   # Prevent the new user dialog in zsh
-  system.userActivationScripts.zshrc = "touch .zshrc";
+
+  programs.zsh.enable = true;
 
   users.users.domenico = {
       isNormalUser = true;

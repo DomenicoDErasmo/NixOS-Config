@@ -15,6 +15,12 @@
   # release notes.
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
+  imports = [
+    ../../modules/home-manager/chromium.nix
+    ../../modules/home-manager/git.nix
+    ../../modules/home-manager/zsh.nix
+  ];
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
