@@ -19,6 +19,7 @@
         "files.autoSaveDelay" = 1000;
         "git.autofetch" = true;
         "git.terminalAuthentication" = false;
+        "git.confirmSync" = false;
         "editor.rulers" = [88];
         "terminal.integrated.profiles.linux" = {
           "Zsh" = {
