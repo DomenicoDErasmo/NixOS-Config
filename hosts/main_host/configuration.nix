@@ -37,7 +37,6 @@
     neovim
     wget
     git
-    vscode
     obsidian
     chromium
     alejandra
@@ -49,15 +48,16 @@
   programs.zsh.enable = true;
 
   users.users.domenico = {
-      isNormalUser = true;
-      initialPassword = "domo";
-      description = "Domenico D'Erasmo";
-      extraGroups = ["networkmanager" "wheel"];
-      shell = pkgs.zsh;
-    };
+    isNormalUser = true;
+    initialPassword = "domo";
+    description = "Domenico D'Erasmo";
+    extraGroups = ["networkmanager" "wheel"];
+    shell = pkgs.zsh;
+  };
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
+    useGlobalPkgs = true;
     users = {
       "domenico" = import ./home.nix;
     };

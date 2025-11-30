@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "domenico";
@@ -41,6 +43,9 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    pkgs.zsh
+    pkgs.zsh-powerlevel10k
+    pkgs.meslo-lgs-nf
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -56,6 +61,17 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+
+    ".p10k.zsh".text = ''
+      # Enable rainbow style
+      typeset -g POWERLEVEL10K_MODE='rainbow'
+
+      # Load the official rainbow config provided by powerlevel10k
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/config/p10k-rainbow.zsh
+
+      # You can add overrides here if you want:
+      # typeset -g POWERLEVEL10K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+    '';
   };
 
   # Home Manager can also manage your environment variables through

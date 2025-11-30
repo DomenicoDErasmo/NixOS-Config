@@ -1,6 +1,9 @@
 # TODO List
 
 - [X] Home Manager
+- [ ] LSP setup
+    [ ] Formatting
+    [ ] 
 - [ ] Basic shell setup
     - [X] Aliases
     - [ ] Functions (flog)
