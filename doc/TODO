@@ -7,7 +7,7 @@
 - [ ] Basic shell setup
     - [X] Aliases
     - [ ] Functions (flog)
-    - [ ] Powerlevel10K
+    - [X] Powerlevel10K
 - [ ] Get other packages downloaded
     - [X] Obsidian
 - [ ] Update VScode to latest version
