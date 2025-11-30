@@ -68,9 +68,6 @@
 
       # Load the official rainbow config provided by powerlevel10k
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/config/p10k-rainbow.zsh
-
-      # You can add overrides here if you want:
-      # typeset -g POWERLEVEL10K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
     '';
   };
 
