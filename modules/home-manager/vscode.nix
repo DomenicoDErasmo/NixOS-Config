@@ -23,6 +23,7 @@
         "git.terminalAuthentication" = false;
         "git.confirmSync" = false;
         "editor.rulers" = [88];
+        "lldb.suppressUpdateNotifications" = true;
 
         # Nix
         "nix.serverPath" = "nixd";
