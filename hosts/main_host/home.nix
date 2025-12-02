@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   chromiumDesktop = "chromium.desktop";
 in {
   # Home Manager needs a bit of information about you and the paths it should
@@ -22,6 +18,7 @@ in {
   imports = [
     ../../modules/home-manager/chromium.nix
     ../../modules/home-manager/git.nix
+    ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/vscode.nix
     ../../modules/home-manager/zsh.nix
   ];
