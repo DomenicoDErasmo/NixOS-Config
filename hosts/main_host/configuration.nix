@@ -22,6 +22,27 @@
   # Unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # swww on startup
+  systemd.user.services.wallpaper = {
+    path = ["${pkgs.swww}" "${pkgs.wallust}"];
+    script = ''
+      homeDirectory="/home/domenico"
+      wallpapersDir="$homeDirectory/Pictures/wallpapers/nature"
+      image=$(find "$wallpapersDir" | shuf -n 1)
+      swww img "$image" --transition-duration 1 --transition-type fade
+      wallust run "$image" -p dark16
+
+      # For use by other processes
+      # TODO: can I make this a global const?
+      rm -fr "$homeDirectory"/wallpaper
+      cp -fr "$image" "$homeDirectory"/wallpaper
+    '';
+    wantedBy = ["multi-user.target"];
+    serviceConfig = {
+      Type = "oneshot";
+    };
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -37,6 +58,8 @@
     ghostty
     rofi
     waybar
+    swww
+    wallust
   ];
 
   programs.zsh.enable = true;
