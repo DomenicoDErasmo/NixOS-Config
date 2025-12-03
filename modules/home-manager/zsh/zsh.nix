@@ -14,5 +14,5 @@
       }
     ];
   };
-  home.file.".zprofile".source = ./zprofile;
+  home.file.".zprofile".source = ./.zprofile;
 }
