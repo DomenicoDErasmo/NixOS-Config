@@ -1,6 +1,4 @@
-{pkgs, ...}: let
-  chromiumDesktop = "chromium.desktop";
-in {
+{pkgs, ...}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "domenico";
@@ -53,12 +51,6 @@ in {
   programs.kitty.enable = true;
   wayland.windowManager.hyprland.enable = true;
 
-  # get my cursor back!
-  dconf.settings."org/gnome/desktop/interface" = {
-    cursor-theme = "capitaine-cursors";
-    cursor-size = 24;
-  };
-
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -101,19 +93,6 @@ in {
   home.sessionVariables = {
     # EDITOR = "emacs";
   };
-
-  # Set environment variables
-  home.sessionVariables = {
-    BROWSER = "chromium";
-  };
-
-  # Set default apps for xdg-open
-  xdg.configFile."mimeapps.list".text = ''
-    [Default Applications]
-    x-scheme-handler/http=${chromiumDesktop}
-    x-scheme-handler/https=${chromiumDesktop}
-    text/html=${chromiumDesktop}
-  '';
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

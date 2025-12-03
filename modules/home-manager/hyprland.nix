@@ -5,6 +5,7 @@
       [
         "$mod, Q, exec, kitty"
         "$mod, F, exec, firefox"
+        "$mod, C, exec, code"
         "$mod, M, exit"
       ]
       ++ (
@@ -20,5 +21,11 @@
           )
           9)
       );
+    # TODO: how to un-hardcode?
+    monitor = [
+      "DP-3,2560x1440@143.97,0x0,1"
+      "HDMI-A-1,2560x1440@143.98,2560x0,1"
+    ];
+    cursor.no_hardware_cursors = true;
   };
 }
