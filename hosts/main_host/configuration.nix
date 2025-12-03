@@ -35,7 +35,8 @@
     firefox
     neofetch
     ghostty
-    rofi-wayland
+    rofi
+    waybar
   ];
 
   programs.zsh.enable = true;

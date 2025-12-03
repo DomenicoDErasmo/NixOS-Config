@@ -19,6 +19,7 @@
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/rofi.nix
     ../../modules/home-manager/vscode.nix
+    ../../modules/home-manager/waybar/waybar.nix
     ../../modules/home-manager/zsh.nix
   ];
 

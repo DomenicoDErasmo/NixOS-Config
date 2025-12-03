@@ -1,0 +1,68 @@
+window#waybar {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#custom-sound_icon {
+  padding-left: 8px;
+  padding-right: 2px;
+  font-size: 18px;
+}
+
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 5px;
+    background-color: black;
+}
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: green;
+}
+
+#disk {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#cpu {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#clock {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#temperature {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#memory {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+#window {
+  margin: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: rgba(0,0,0,0.3);
+  font-size:14px;
+  font-weight: bold;
+}
+
+#workspaces button {
+  color: #ffffff;
+}

@@ -6,6 +6,7 @@
         "$mod, Q, exec, ghostty"
         "$mod, F, exec, firefox"
         "$mod, C, exec, code"
+        "$mod, Space, exec, rofi -show drun -show-icons"
         "$mod, M, exit"
       ]
       ++ (
