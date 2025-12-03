@@ -29,13 +29,13 @@
     wget
     git
     obsidian
-    chromium
     alejandra
     zsh
     nixd
     firefox
     neofetch
     ghostty
+    rofi-wayland
   ];
 
   programs.zsh.enable = true;

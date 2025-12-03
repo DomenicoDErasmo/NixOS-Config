@@ -17,6 +17,7 @@
     ../../modules/home-manager/chromium.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/hyprland.nix
+    ../../modules/home-manager/rofi.nix
     ../../modules/home-manager/vscode.nix
     ../../modules/home-manager/zsh.nix
   ];
