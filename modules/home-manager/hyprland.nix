@@ -1,18 +1,24 @@
-{pkgs, ...}: {
-  # Hyprland - Window Manager
-  wayland.windowManager.hyprland = let
-    startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-    '';
-  in {
-    enable = true;
-    settings = {
-      exec-once = ''${startupScript}/bin/start'';
-      bind = [
-        "SUPER, Q, exec, kitty"
-        "SUPER, W, exec, waybar"
-        "SUPER, C, killactive"
-        "ALT, TAB, exec, rofi -show drun -show-icons"
-      ];
-    };
+{...}: {
+  wayland.windowManager.hyprland.settings = {
+    "$mod" = "SUPER";
+    bind =
+      [
+        "$mod, Q, exec, kitty"
+        "$mod, F, exec, firefox"
+        "$mod, M, exit"
+      ]
+      ++ (
+        # workspaces
+        # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
+        builtins.concatLists (builtins.genList (
+            i: let
+              ws = i + 1;
+            in [
+              "$mod, code:1${toString i}, workspace, ${toString ws}"
+              "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+            ]
+          )
+          9)
+      );
   };
 }

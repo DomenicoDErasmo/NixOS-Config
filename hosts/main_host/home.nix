@@ -45,7 +45,19 @@ in {
     pkgs.zsh
     pkgs.zsh-powerlevel10k
     pkgs.meslo-lgs-nf
+    pkgs.capitaine-cursors
   ];
+
+  # TODO: fix
+  # trouble shoot by setting up kitty to output logs
+  programs.kitty.enable = true;
+  wayland.windowManager.hyprland.enable = true;
+
+  # get my cursor back!
+  dconf.settings."org/gnome/desktop/interface" = {
+    cursor-theme = "capitaine-cursors";
+    cursor-size = 24;
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

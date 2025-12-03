@@ -41,6 +41,7 @@
     zsh
     nixd
     firefox
+    neofetch
   ];
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
