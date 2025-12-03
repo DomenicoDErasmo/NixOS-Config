@@ -20,7 +20,7 @@
     ../../modules/home-manager/rofi.nix
     ../../modules/home-manager/vscode.nix
     ../../modules/home-manager/waybar/waybar.nix
-    ../../modules/home-manager/zsh.nix
+    ../../modules/home-manager/zsh/zsh.nix
   ];
 
   # The home.packages option allows you to install Nix packages into your
