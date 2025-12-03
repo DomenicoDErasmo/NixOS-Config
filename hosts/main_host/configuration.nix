@@ -45,8 +45,6 @@
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
-  programs.zsh.enable = true;
-
   users.users.domenico = {
     isNormalUser = true;
     initialPassword = "domo";
@@ -62,6 +60,21 @@
       "domenico" = import ./home.nix;
     };
   };
+
+  hardware.graphics.enable = true;
+  # hardware.graphics.enable32Bit = true;
+  hardware.graphics.extraPackages = with pkgs; [
+    egl-wayland
+  ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = true;
+    prime.offload.enable = false;
+    nvidiaSettings = true;
+    open = true;
+  };
+
+  services.xserver.videoDrivers = ["nvidia"];
 
   # Allow flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];

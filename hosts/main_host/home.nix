@@ -46,9 +46,6 @@
     pkgs.capitaine-cursors
   ];
 
-  # TODO: fix
-  # trouble shoot by setting up kitty to output logs
-  programs.kitty.enable = true;
   wayland.windowManager.hyprland.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
