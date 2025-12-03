@@ -35,7 +35,10 @@
     nixd
     firefox
     neofetch
+    ghostty
   ];
+
+  programs.zsh.enable = true;
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   # Cachix to avoid building Hyprland
