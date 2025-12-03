@@ -3,7 +3,7 @@
     "$mod" = "SUPER";
     bind =
       [
-        "$mod, Q, exec, kitty"
+        "$mod, Q, exec, ghostty"
         "$mod, F, exec, firefox"
         "$mod, C, exec, code"
         "$mod, M, exit"
@@ -26,6 +26,7 @@
       "DP-3,2560x1440@143.97,0x0,1"
       "HDMI-A-1,2560x1440@143.98,2560x0,1"
     ];
+    # fix flickering cursor
     cursor.no_hardware_cursors = true;
   };
 }
