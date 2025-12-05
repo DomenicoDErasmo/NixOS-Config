@@ -39,10 +39,10 @@
     waybar
     swww
     lsof
-    "1password-gui"
   ];
 
   programs.zsh.enable = true;
+  programs._1password-gui.enable = true;
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   # Cachix to avoid building Hyprland
