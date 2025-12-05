@@ -15,7 +15,7 @@
 
     # set wallpaper
     ${pkgs.swww}/bin/swww img "$image" --transition-duration 1 --transition-type fade &
-    ${pkgs.wallust}/bin/wallust run "$image" -p dark16 -o "$HOME/.cache/wallpaper_colors.sh" &
+    ${pkgs.wallust}/bin/wallust run "$image" -p dark16 &
 
     # store current wallpaper for other apps
     cp -f "$image" "${homeDirectory}/current-wallpaper" &
