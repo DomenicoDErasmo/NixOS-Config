@@ -39,6 +39,7 @@
     waybar
     swww
     lsof
+    "1password-gui"
   ];
 
   programs.zsh.enable = true;
