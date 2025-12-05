@@ -48,6 +48,17 @@
     pkgs.capitaine-cursors
   ];
 
+  systemd.user.services.wallpaper = {
+    path = ["${pkgs.swww}" "${pkgs.wallust}"];
+    script = ''
+      /home/domenico/NixOS_Config/swww/wallpaper.sh
+    '';
+    wantedBy = ["multi-user.target"];
+    serviceConfig = {
+      Type = "oneshot";
+    };
+  };
+
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.systemd.enable = true;
 
