@@ -14,6 +14,8 @@
         modules-right = [
           "custom/sound_icon"
           "pulseaudio/slider"
+          "custom/rofi"
+          "custom/power"
           "disk"
           "temperature"
           "memory"
@@ -23,6 +25,12 @@
         "custom/rofi" = {
           format = "Apps";
           "on-click" = "rofi -show drun -show-icons";
+        };
+        "custom/power" = {
+          format = ""; # Nerd Font power icon
+          "click-left" = "./powermenu.sh";
+          interval = 0;
+          tooltip = false;
         };
         # The hollow squares are icons taken from Ubuntu Nerd Font.
         # I couldn't get these to show up in VSCode.
