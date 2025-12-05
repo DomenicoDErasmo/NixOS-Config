@@ -1,12 +1,15 @@
 {pkgs, ...}: {
   wayland.windowManager.hyprland = let
     startupScript = pkgs.writeShellScriptBin "start" ''
+      sleep 1
+      swww-daemon &
+      sleep 1
       waybar &
       sleep 1
     '';
   in {
     settings = {
-      # exec-once = ''${startupScript}/bin/start'';
+      exec-once = ''${startupScript}/bin/start'';
       "$mod" = "SUPER";
       bind =
         [

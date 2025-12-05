@@ -39,6 +39,7 @@
     waybar
     swww
     wallust
+    lsof
   ];
 
   programs.zsh.enable = true;
@@ -64,6 +65,14 @@
     useGlobalPkgs = true;
     users = {
       "domenico" = import ./home.nix;
+    };
+  };
+
+  services.greetd = {
+    enable = true;
+    settings.default_session = {
+      command = "${pkgs.hyprland}/bin/Hyprland";
+      user = "domenico";
     };
   };
 
