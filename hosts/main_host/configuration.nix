@@ -38,7 +38,6 @@
     rofi
     waybar
     swww
-    wallust
     lsof
   ];
 

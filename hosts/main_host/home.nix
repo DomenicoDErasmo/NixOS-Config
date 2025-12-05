@@ -6,10 +6,9 @@
   wallpapersDir = "${config.home.homeDirectory}/Pictures/wallpapers/nature";
   wallpaperTimerInterval = "10min";
   wallpaperTimerBootDelay = "1min";
+  homeDirectory = config.home.homeDirectory;
   wallpaperScript = pkgs.writeShellScriptBin "wallpaper-set" ''
     #!/run/current-system/sw/bin/zsh
-
-    homeDirectory="${config.home.homeDirectory}"
 
     # pick random image
     image=$(find "${wallpapersDir}" -type f | shuf -n 1)
@@ -19,7 +18,7 @@
     ${pkgs.wallust}/bin/wallust run "$image" -p dark16 &
 
     # store current wallpaper for other apps
-    cp -f "$image" "$homeDirectory/current-wallpaper" &
+    cp -f "$image" "${homeDirectory}/current-wallpaper" &
   '';
 in {
   # Home Manager needs a bit of information about you and the paths it should
