@@ -39,6 +39,7 @@
     waybar
     swww
     lsof
+    
   ];
 
   programs.zsh.enable = true;
