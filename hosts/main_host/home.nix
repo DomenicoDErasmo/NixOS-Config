@@ -1,4 +1,27 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: let
+  wallpapersDir = "${config.home.homeDirectory}/Pictures/wallpapers/nature";
+  wallpaperTimerInterval = "10min";
+  wallpaperTimerBootDelay = "1min";
+  wallpaperScript = pkgs.writeShellScriptBin "wallpaper-set" ''
+    #!/run/current-system/sw/bin/zsh
+
+    homeDirectory="${config.home.homeDirectory}"
+
+    # pick random image
+    image=$(find "${wallpapersDir}" -type f | shuf -n 1)
+
+    # set wallpaper
+    ${pkgs.swww}/bin/swww img "$image" --transition-duration 1 --transition-type fade &
+    ${pkgs.wallust}/bin/wallust run "$image" -p dark16 &
+
+    # store current wallpaper for other apps
+    cp -f "$image" "$homeDirectory/current-wallpaper" &
+  '';
+in {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "domenico";
@@ -46,16 +69,38 @@
     pkgs.zsh-powerlevel10k
     pkgs.meslo-lgs-nf
     pkgs.capitaine-cursors
+    pkgs.wallust
+    wallpaperScript
   ];
 
   systemd.user.services.wallpaper = {
-    path = ["${pkgs.swww}" "${pkgs.wallust}"];
-    script = ''
-      /home/domenico/NixOS_Config/swww/wallpaper.sh
-    '';
-    wantedBy = ["multi-user.target"];
-    serviceConfig = {
+    Unit = {
+      Description = "Set random wallpaper";
+    };
+
+    Service = {
       Type = "oneshot";
+      ExecStart = "${wallpaperScript}/bin/wallpaper-set";
+    };
+
+    Install = {
+      WantedBy = ["timers.target"];
+    };
+  };
+
+  systemd.user.timers.wallpaper = {
+    Unit = {
+      Description = "Run wallpaper service every 10 minutes";
+    };
+
+    Timer = {
+      OnBootSec = wallpaperTimerBootDelay;
+      OnUnitActiveSec = wallpaperTimerInterval;
+      AccuracySec = "1s";
+    };
+
+    Install = {
+      WantedBy = ["timers.target"];
     };
   };
 

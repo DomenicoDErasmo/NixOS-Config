@@ -6,6 +6,7 @@
       sleep 1
       waybar &
       sleep 1
+      /home/domenico/.nix-profile/bin/wallpaper-set &
     '';
   in {
     settings = {
