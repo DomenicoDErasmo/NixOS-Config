@@ -1,8 +1,10 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  notionLogo = ./notion-logo.png;
+in {
   xdg.desktopEntries.notion = {
     name = "Notion";
     exec = "${pkgs.chromium}/bin/chromium --app=https://www.notion.so/";
-    icon = "./notion-logo.png";
+    icon = "${notionLogo}";
     terminal = false;
     categories = ["Office"];
     startupNotify = true;
