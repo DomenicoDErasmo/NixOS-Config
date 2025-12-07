@@ -13,6 +13,7 @@
         vadimcn.vscode-lldb # LLDB - Debugging
         tamasfe.even-better-toml # TOML syntax highlighting
         fill-labs.dependi # Cargo crate completion
+        llvm-vs-code-extensions.vscode-clangd # clangd
       ];
       userSettings = {
         "explorer.confirmDragAndDrop" = false;
