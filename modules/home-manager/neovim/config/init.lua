@@ -7,7 +7,6 @@ require("config.keymap")
 require("config.null_ls")
 require("config.lsp.lua")
 
-
 -- ==========================================
 -- Paths to Nix-installed binaries
 -- ==========================================
@@ -22,15 +21,15 @@ vim.lsp.config["rust_analyzer"] = {
 		["rust-analyzer"] = {
 			cargo = { allFeatures = true },
 			checkOnSave = true,
-            rustfmt = { overrideCommand = { "rustfmt" } }
+			rustfmt = { overrideCommand = { "rustfmt" } },
 		},
 	},
 	on_attach = on_attach,
 }
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "rs",
-  callback = function()
-    vim.lsp.start(vim.lsp.config["rust_analyzer"])
-  end,
+	pattern = "rs",
+	callback = function()
+		vim.lsp.start(vim.lsp.config["rust_analyzer"])
+	end,
 })
