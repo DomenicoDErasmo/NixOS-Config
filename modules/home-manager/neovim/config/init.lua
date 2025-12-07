@@ -14,7 +14,7 @@ require('mason-tool-installer').setup({
     }
 })
 
-vim.lsp.config.('lua_ls', {
+vim.lsp.config('lua_ls', {
     settings = {
         Lua = {
             runtime = {
