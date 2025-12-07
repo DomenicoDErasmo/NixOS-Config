@@ -35,6 +35,10 @@
         "$mod SHIFT, 3, movetoworkspace, 3"
         "$mod SHIFT, 4, movetoworkspace, 4"
         "$mod SHIFT, 5, movetoworkspace, 5"
+        "$mod ALT, left, movewindow, l"
+        "$mod ALT, up, movewindow, u"
+        "$mod ALT, right, movewindow, r"
+        "$mod ALT, down, movewindow, d"
       ];
       # TODO: how to un-hardcode?
       monitor = [

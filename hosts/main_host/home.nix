@@ -29,6 +29,8 @@
   home.packages = with pkgs; [
     _1password-gui
     alejandra
+    direnv
+    devenv
     discord
     hyperfine
     nixd

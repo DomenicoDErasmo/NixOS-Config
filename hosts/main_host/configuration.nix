@@ -79,6 +79,7 @@ in {
   };
 
   services.xserver.videoDrivers = ["nvidia"];
+  nix.settings.trusted-users = ["root" "domenico"];
 
   # Allow flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
