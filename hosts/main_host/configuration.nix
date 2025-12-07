@@ -5,7 +5,12 @@
   pkgs,
   inputs,
   ...
-}: {
+}: let
+  hyprlandStartup = pkgs.writeShellScriptBin "hyprland-init" ''
+    export GTK_THEME=Adwaita:dark
+    ${pkgs.hyprland}/bin/Hyprland
+  '';
+in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -56,7 +61,7 @@
   services.greetd = {
     enable = true;
     settings.default_session = {
-      command = "${pkgs.hyprland}/bin/Hyprland";
+      command = "${hyprlandStartup}/bin/hyprland-init";
       user = "domenico";
     };
   };

@@ -29,27 +29,8 @@ window#waybar {
     background-color: green;
 }
 
-#disk {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-#cpu {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
 #clock {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-#temperature {
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-#memory {
+  background-color: #000000;
   padding-left: 8px;
   padding-right: 8px;
 }
