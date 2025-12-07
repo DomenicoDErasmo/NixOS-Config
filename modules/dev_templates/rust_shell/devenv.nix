@@ -7,7 +7,7 @@
   env.GREET = "devenv";
 
   # https://devenv.sh/packages/
-  packages = [pkgs.git pkgs.bacon pkgs.cargo-info pkgs.rusty-man];
+  packages = [pkgs.git pkgs.bacon pkgs.cargo-info pkgs.rusty-man pkgs.zsh];
 
   languages.rust = {
     channel = "nightly";
@@ -38,8 +38,7 @@
 
   # https://devenv.sh/basics/
   enterShell = ''
-    hello         # Run scripts directly
-    git --version # Use packages
+    zsh
     export RUST_SRC_PATH="${config.languages.rust.toolchain.rust-src}/lib/rustlib/src/rust/library"
   '';
 
