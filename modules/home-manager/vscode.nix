@@ -14,10 +14,12 @@
         tamasfe.even-better-toml # TOML syntax highlighting
         fill-labs.dependi # Cargo crate completion
         llvm-vs-code-extensions.vscode-clangd # clangd
+        ms-vscode.cmake-tools # Additional CMAke support
+        ms-vscode.makefile-tools # Makefile support
       ];
 
       # hack to allow for easy LSP
-      userSettings = builtins.fromJSON (builtins.readFile ../../../.vscode/settings.json);
+      userSettings = builtins.fromJSON (builtins.readFile ../../.vscode/settings.json);
     };
   };
 }
