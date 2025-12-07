@@ -52,6 +52,9 @@
     # View system details
     neofetch
 
+    # Wikipedia TUI
+    wiki-tui
+
     # Redlight
     wlsunset
   ];
