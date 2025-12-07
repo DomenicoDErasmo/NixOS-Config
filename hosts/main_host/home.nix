@@ -27,14 +27,32 @@
   ];
 
   home.packages = with pkgs; [
+    # Password Manager
     _1password-gui
+
+    # Nix Formatter
     alejandra
+
+    # For dev shells
     direnv
     devenv
+
+    # Voice calls
     discord
+
+    # Performance measuring
     hyperfine
+
+    # TUI Spotify
+    ncspot
+
+    # Nix LSP
     nixd
+
+    # View system details
     neofetch
+
+    # Redlight
     wlsunset
   ];
 
