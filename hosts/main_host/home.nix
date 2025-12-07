@@ -15,7 +15,6 @@
 
     # set wallpaper
     ${pkgs.swww}/bin/swww img "$image" --transition-duration 1 --transition-type fade &
-    ${pkgs.wallust}/bin/wallust run "$image" -p dark16 &
 
     # store current wallpaper for other apps
     cp -f "$image" "${homeDirectory}/current-wallpaper" &
@@ -43,6 +42,7 @@ in {
     ../../modules/home-manager/rofi.nix
     ../../modules/home-manager/vscode.nix
     ../../modules/home-manager/waybar/waybar.nix
+    ../../modules/home-manager/wlsunset.nix
     ../../modules/home-manager/zsh/zsh.nix
   ];
 
@@ -69,7 +69,6 @@ in {
     pkgs.zsh-powerlevel10k
     pkgs.meslo-lgs-nf
     pkgs.capitaine-cursors
-    pkgs.wallust
     wallpaperScript
   ];
 

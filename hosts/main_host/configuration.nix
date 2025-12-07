@@ -22,8 +22,6 @@
   # Unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  programs.firefox.nativeMessagingHosts.packages = [pkgs.firefoxpwa];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -34,7 +32,6 @@
     alejandra
     zsh
     nixd
-    firefox
     neofetch
     ghostty
     rofi
@@ -42,7 +39,8 @@
     swww
     lsof
     discord
-    redshift
+    wlsunset
+    chromium
   ];
 
   programs.zsh.enable = true;
