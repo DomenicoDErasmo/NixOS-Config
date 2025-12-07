@@ -19,6 +19,7 @@
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/mako/mako.nix
+    ../../modules/home-manager/neovim/neovim.nix
     ../../modules/home-manager/notion/notion.nix
     ../../modules/home-manager/rofi.nix
     ../../modules/home-manager/vscode.nix
