@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "domenico";
@@ -14,6 +14,7 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   imports = [
+    ../../modules/home-manager/1password.nix
     ../../modules/home-manager/chromium.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/hyprland.nix
@@ -30,8 +31,12 @@
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.systemd.enable = true;
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
+  home.packages = with pkgs; [
+    alejandra
+    discord
+    nixd
+    neofetch
+  ];
 
   home.sessionVariables = {
     # EDITOR = "emacs";

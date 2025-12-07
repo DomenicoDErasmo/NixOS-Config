@@ -28,24 +28,14 @@
     neovim
     wget
     git
-    obsidian
-    alejandra
     zsh
-    nixd
-    neofetch
     ghostty
     rofi
     waybar
     swww
-    lsof
-    discord
-    wlsunset
-    chromium
-    mako
   ];
 
   programs.zsh.enable = true;
-  programs._1password-gui.enable = true;
 
   nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   # Cachix to avoid building Hyprland

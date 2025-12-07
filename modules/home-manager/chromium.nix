@@ -1,5 +1,8 @@
-{...}: {
-  # Chromium - web browser
+{pkgs, ...}: {
+  home.packages = [
+    pkgs.chromium
+  ];
+
   programs.chromium = {
     extensions = [
       # uBlock Origin - Ad Blocker

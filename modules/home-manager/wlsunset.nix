@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  home.packages = [
+    pkgs.wlsunset
+  ];
+
   systemd.user.services.wlsunset = {
     Unit = {
       Description = "Adjust screen color temperature automatically";
