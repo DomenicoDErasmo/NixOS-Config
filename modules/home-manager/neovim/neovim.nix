@@ -10,6 +10,8 @@
     pkgs.stylua
     # Lua LSP
     pkgs.lua-language-server
+    # Rustfmt
+    pkgs.rustfmt
   ];
 
   programs.neovim = {
@@ -17,4 +19,5 @@
     package = inputs.neovimNightlyOverlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
   home.file.".config/nvim/init.lua".source = ./config/init.lua;
+  home.file.".config/nvim/lua".source = ./config/lua;
 }
