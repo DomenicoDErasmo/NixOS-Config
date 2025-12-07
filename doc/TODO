@@ -1,5 +1,7 @@
 # TODO List
 - [ ] Neovim Config
+    - [ ] Rust LSP - Clippy
+    - [ ] Plugins? fzf, telescope, airline?
 - [ ] Fix wallpaper daemon
 - [ ] Dev setup
     - [ ] Python

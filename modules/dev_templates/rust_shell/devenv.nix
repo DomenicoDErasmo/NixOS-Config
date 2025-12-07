@@ -7,7 +7,7 @@
   env.GREET = "devenv";
 
   # https://devenv.sh/packages/
-  packages = [pkgs.git pkgs.bacon pkgs.cargo-info pkgs.rusty-man pkgs.zsh];
+  packages = [pkgs.git pkgs.bacon pkgs.cargo-info pkgs.zsh];
 
   languages.rust = {
     channel = "nightly";
