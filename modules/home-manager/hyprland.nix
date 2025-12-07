@@ -16,6 +16,7 @@
         [
           "$mod, Q, exec, ghostty"
           "$mod, W, exec, waybar"
+          "$mod, C, killactive"
           "ALT, TAB, exec, rofi -show drun -show-icons"
           "$mod, M, exit"
         ]
