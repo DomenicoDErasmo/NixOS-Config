@@ -14,6 +14,7 @@
         tamasfe.even-better-toml # TOML syntax highlighting
         fill-labs.dependi # Cargo crate completion
         sumneko.lua # Lua
+        christian-kohler.path-intellisense # Path IntelliSense
       ];
 
       # hack to allow for easy LSP
