@@ -1,4 +1,4 @@
-require("lua.plugins")
+require("config.plugins")
 
 -- ==========================================
 -- Other settings
