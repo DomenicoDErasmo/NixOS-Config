@@ -49,6 +49,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local opts = { buffer = buf, remap = false }
 
         -- Go to definition
+        -- Related, jump lists: 
+        -- Ctrl+o to jump back and Ctrl-i to jump forward
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
         -- Hover documentation
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
@@ -74,6 +76,32 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'buffer' },
         { name = 'path' },
+    },
+    mapping = {
+        -- Scroll documentation popup
+        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+
+        -- Confirm selection
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+
+        -- Tab for navigating
+        ['<Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+
+        -- Shift-tab for previous selection
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
     },
 })
 
