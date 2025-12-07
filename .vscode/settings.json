@@ -7,17 +7,10 @@
   "git.terminalAuthentication": false,
   "git.confirmSync": false,
   "editor.rulers": [88],
-  "lldb.suppressUpdateNotifications": true,
 
   "nix.serverPath": "nixd",
   "nixEnvSelector.nixFile": "${workspaceFolder}/flake.nix",
   "nix.enableLanguageServer": true,
-  "nixpkgs": {
-    "expr": "import <nixpkgs> { }"
-  },
-  "formatting": {
-    "command": ["alejandra"]
-  },
 
   "terminal.integrated.profiles.linux": {
     "Zsh": {
@@ -25,7 +18,7 @@
       "icon": "terminal-bash"
     }
   },
-  "terminal.integrated.defaultProfile.linux": "Zsh",
+  "terminal.integrated.defaultProfile.linux": "zsh",
 
   "rust-analyzer.check.command": "clippy",
   "[rust]": {

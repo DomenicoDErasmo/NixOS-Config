@@ -16,7 +16,8 @@
         llvm-vs-code-extensions.vscode-clangd # clangd
       ];
 
-      userSettings = builtins.fromJSON (builtins.readFile ./settings.json);
+      # hack to allow for easy LSP
+      userSettings = builtins.fromJSON (builtins.readFile ../../../.vscode/settings.json);
     };
   };
 }
