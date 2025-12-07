@@ -41,6 +41,7 @@
     discord
     wlsunset
     chromium
+    mako
   ];
 
   programs.zsh.enable = true;

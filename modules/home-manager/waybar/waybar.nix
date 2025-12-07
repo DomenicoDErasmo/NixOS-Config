@@ -8,10 +8,6 @@
         modules-left = [
           "hyprland/workspaces"
           "custom/rofi"
-          "disk"
-          "temperature"
-          "memory"
-          "cpu"
         ];
         modules-center = [
           "hyprland/window"
@@ -35,15 +31,17 @@
         "custom/sound_icon" = {
           format = "󰕾";
         };
-        cpu = {
-          format = "    {usage}%";
-        };
-        disk = {
-          format = "    {percentage_used}%";
-        };
         "hyprland/workspaces" = {
-          "format" = "{icon}";
-          "persistent_workspaces" = {
+          on-click = "activate";
+          format = "{icon}";
+          format-icons = {
+            "1" = "1";
+            "2" = "2";
+            "3" = "3";
+            "4" = "4";
+            "5" = "5";
+          };
+          persistent-workspaces = {
             "1" = [];
             "2" = [];
             "3" = [];
@@ -53,16 +51,10 @@
         };
 
         layer = "top";
-        memory = {
-          format = "󰍛    {percentage}%";
-        };
         "pulseaudio/slider" = {
           min = 0;
           max = 100;
           orientation = "horizontal";
-        };
-        temperature = {
-          format = "    {temperatureC}°C";
         };
       }
     ];
