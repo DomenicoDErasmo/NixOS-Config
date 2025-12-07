@@ -121,13 +121,7 @@ in {
     #   org.gradle.daemon.idletimeout=3600000
     # '';
 
-    ".p10k.zsh".text = ''
-      # Enable rainbow style
-      typeset -g POWERLEVEL10K_MODE='rainbow'
-
-      # Load the official rainbow config provided by powerlevel10k
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/config/p10k-rainbow.zsh
-    '';
+    ".p10k.zsh".source = ../../modules/home-manager/zsh/.p10k.zsh;
   };
 
   # Home Manager can also manage your environment variables through
