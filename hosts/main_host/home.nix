@@ -21,15 +21,13 @@
     ../../modules/home-manager/mako/mako.nix
     ../../modules/home-manager/notion-pwa.nix
     ../../modules/home-manager/rofi.nix
+    ../../modules/home-manager/swww.nix
     ../../modules/home-manager/vscode.nix
     ../../modules/home-manager/wallpaper.nix
     ../../modules/home-manager/waybar/waybar.nix
     ../../modules/home-manager/wlsunset.nix
     ../../modules/home-manager/zsh/zsh.nix
   ];
-
-  wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.systemd.enable = true;
 
   home.packages = with pkgs; [
     alejandra

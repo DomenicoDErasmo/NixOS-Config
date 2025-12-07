@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   # Waybar - Taskbar
   programs.waybar = {
     enable = true;
@@ -58,5 +58,15 @@
         };
       }
     ];
+  };
+
+  systemd.user.services.waybar = {
+    Unit.Description = "Waybar";
+    Service = {
+      ExecStart = "${pkgs.waybar}/bin/waybar";
+      Type = "simple";
+      Restart = "always";
+    };
+    Install.WantedBy = ["default.target"];
   };
 }

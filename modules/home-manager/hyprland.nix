@@ -1,24 +1,13 @@
-{pkgs, ...}: {
-  wayland.windowManager.hyprland = let
-    startupScript = pkgs.writeShellScriptBin "start" ''
-      sleep 1
-      swww-daemon &
-      sleep 1
-      waybar &
-      sleep 1
-      /home/domenico/.nix-profile/bin/wallpaper-set &
-    '';
-  in {
-    # wayland.windowManager.hyprland = {
-    #   enable = true;
-    #   systemd.enable = true;
-    # };
+{...}: {
+  wayland.windowManager.hyprland = {
+    enable = true;
+    systemd.enable = true;
 
     settings = {
-      exec-once = ''${startupScript}/bin/start'';
       "$mod" = "SUPER";
       bind = [
         "$mod, Q, exec, ghostty"
+        "$mod, W, exec, waybar"
         "$mod, C, killactive"
         "$mod, M, exit"
         "ALT, TAB, exec, rofi -show drun -show-icons"
