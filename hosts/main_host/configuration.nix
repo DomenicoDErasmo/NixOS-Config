@@ -37,14 +37,6 @@
 
   programs.zsh.enable = true;
 
-  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
-  # Cachix to avoid building Hyprland
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
-
   users.users.domenico = {
     isNormalUser = true;
     initialPassword = "domo";
@@ -70,7 +62,6 @@
   };
 
   hardware.graphics.enable = true;
-  # hardware.graphics.enable32Bit = true;
   hardware.graphics.extraPackages = with pkgs; [
     egl-wayland
   ];

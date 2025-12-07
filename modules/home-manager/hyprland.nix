@@ -1,9 +1,33 @@
-{...}: {
-  wayland.windowManager.hyprland = {
+{pkgs, ...}: {
+  wayland.windowManager.hyprland = let
+    startupScript = pkgs.writeShellScriptBin "hyprland-startup" ''
+      # --- Startup script for Hyprland session ---
+
+      # Give Wayland a moment to settle
+      sleep 1
+
+      # Start Swww daemon for wallpapers
+      ${pkgs.swww}/bin/swww-daemon &
+
+      # Wait for swww to be ready
+      sleep 1
+
+      # Start Waybar
+      ${pkgs.waybar}/bin/waybar &
+
+      # Start Mako notifications
+      ${pkgs.mako}/bin/mako &
+
+      # Start Wlsunset for color temperature
+      ${pkgs.wlsunset}/bin/wlsunset -l 40.7128 -L -74.0060 -t 3500 -T 6500 &
+
+    '';
+  in {
     enable = true;
     systemd.enable = true;
 
     settings = {
+      exec-once = ''${startupScript}/bin/hyprland-startup'';
       "$mod" = "SUPER";
       bind = [
         "$mod, Q, exec, ghostty"

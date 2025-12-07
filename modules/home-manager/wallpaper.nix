@@ -17,7 +17,7 @@
     ${pkgs.swww}/bin/swww img "$image" --transition-duration 1 --transition-type fade &
 
     # store current wallpaper for other apps
-    cp -f "$image" "${homeDirectory}/current-wallpaper" &
+    ${pkgs.coreutils}/bin/cp -f "$image" "${homeDirectory}/current-wallpaper" &
   '';
 in {
   systemd.user.services.wallpaper = {

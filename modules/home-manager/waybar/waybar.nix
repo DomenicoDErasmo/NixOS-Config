@@ -59,14 +59,20 @@
       }
     ];
   };
-
   systemd.user.services.waybar = {
-    Unit.Description = "Waybar";
+    Unit = {
+      Description = "Waybar panel";
+      After = ["graphical-session.target"];
+    };
+    Install = {
+      WantedBy = ["default.target"];
+    };
+
     Service = {
       ExecStart = "${pkgs.waybar}/bin/waybar";
-      Type = "simple";
       Restart = "always";
+      RestartSec = 2;
+      Type = "simple";
     };
-    Install.WantedBy = ["default.target"];
   };
 }
