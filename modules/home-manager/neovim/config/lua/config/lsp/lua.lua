@@ -1,4 +1,3 @@
-
 local lua_ls_cmd = os.getenv("HOME") .. "/.nix-profile/bin/lua-language-server"
 
 vim.lsp.config["lua_ls"] = {
