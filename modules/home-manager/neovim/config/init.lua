@@ -9,7 +9,6 @@ require("config.keymap")
 -- ==========================================
 -- Paths to Nix-installed binaries
 -- ==========================================
-local lspconfig = require("lspconfig")
 local lua_ls_cmd = os.getenv("HOME") .. "/.nix-profile/bin/lua-language-server"
 local stylua_cmd = os.getenv("HOME") .. "/.nix-profile/bin/stylua"
 local rustfmt_cmd = os.getenv("HOME") .. "/.nix-profile/bin/rustfmt"
@@ -18,8 +17,7 @@ local rustfmt_cmd = os.getenv("HOME") .. "/.nix-profile/bin/rustfmt"
 -- Lua LSP Configuration
 -- ==========================================
 
--- deprecated version seems to work
-lspconfig.lua_ls.setup({
+vim.lsp.config["lua_ls"] = {
 	cmd = { lua_ls_cmd },
 	settings = {
 		Lua = {
@@ -29,12 +27,19 @@ lspconfig.lua_ls.setup({
 			telemetry = { enable = false },
 		},
 	},
+}
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "lua",
+  callback = function()
+    vim.lsp.start(vim.lsp.config["lua_ls"])
+  end,
 })
 
 -- ==========================================
 -- Rust LSP Configuration
 -- ==========================================
-lspconfig.rust_analyzer.setup({
+vim.lsp.config["rust_analyzer"] = {
 	cmd = { vim.fn.exepath("rust-analyzer") },
 	settings = {
 		["rust-analyzer"] = {
@@ -43,6 +48,13 @@ lspconfig.rust_analyzer.setup({
 		},
 	},
 	on_attach = on_attach,
+}
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "rs",
+  callback = function()
+    vim.lsp.start(vim.lsp.config["rust_analyzer"])
+  end,
 })
 
 -- ==========================================
