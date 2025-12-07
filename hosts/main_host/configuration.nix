@@ -34,7 +34,6 @@ in {
     wget
     git
     zsh
-    ghostty
     rofi
     waybar
     swww

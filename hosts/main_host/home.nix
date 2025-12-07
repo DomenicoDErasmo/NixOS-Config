@@ -15,6 +15,7 @@
 
   imports = [
     ../../modules/home-manager/chromium.nix
+    ../../modules/home-manager/ghostty/ghostty.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/mako/mako.nix
