@@ -30,6 +30,7 @@
     _1password-gui
     alejandra
     discord
+    hyperfine
     nixd
     neofetch
     wlsunset
