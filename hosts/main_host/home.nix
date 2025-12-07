@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "domenico";
@@ -27,21 +27,11 @@
     ../../modules/home-manager/zsh/zsh.nix
   ];
 
-  home.packages = [
-    pkgs.zsh
-    pkgs.zsh-powerlevel10k
-    pkgs.meslo-lgs-nf
-    pkgs.capitaine-cursors
-  ];
-
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.systemd.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
-  home.file = {
-    ".p10k.zsh".source = ../../modules/home-manager/zsh/.p10k.zsh;
-  };
 
   home.sessionVariables = {
     # EDITOR = "emacs";

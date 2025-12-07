@@ -9,6 +9,11 @@
       /home/domenico/.nix-profile/bin/wallpaper-set &
     '';
   in {
+    # wayland.windowManager.hyprland = {
+    #   enable = true;
+    #   systemd.enable = true;
+    # };
+
     settings = {
       exec-once = ''${startupScript}/bin/start'';
       "$mod" = "SUPER";

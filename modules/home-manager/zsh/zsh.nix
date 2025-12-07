@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  home.packages = [
+    pkgs.zsh
+    pkgs.zsh-powerlevel10k
+    pkgs.meslo-lgs-nf
+  ];
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -14,7 +19,13 @@
       }
     ];
   };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   home.file = {
-    ".zprofile".source = ./.zprofile;
+    ".p10k.zsh".source = ./.p10k.zsh;
   };
 }
