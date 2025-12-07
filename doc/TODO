@@ -1,18 +1,4 @@
 # TODO List
-
-- [X] Home Manager
-- [X] Nix LSP setup
-- [ ] Basic shell setup
-    - [X] Aliases
-    - [ ] Functions (flog)
-    - [X] Powerlevel10K
-- [ ] Get other packages downloaded
-    - [X] Obsidian
-- [ ] Update VScode to latest version
-- [ ] Get GitHub working
-- [ ] Extensions in VSCode for development
-    - [ ] Shellcheck
-    - [ ] Markdownlint
-- [ ] Proper Nix IntelliSense
 - [ ] Neovim Config
-- [ ] Hyprland
+- [ ] Dev setup
+- [ ] Better Hyprland keybinds
