@@ -33,6 +33,15 @@
     # Nix Formatter
     alejandra
 
+    # Sound visualizer
+    cava
+
+    # CLI bonsai tree
+    cbonsai
+
+    # CLI matrix animation
+    cmatrix
+
     # For dev shells
     direnv
     devenv
@@ -51,6 +60,9 @@
 
     # View system details
     neofetch
+
+    # CLI pipe animation
+    pipes
 
     # Wikipedia TUI
     wiki-tui
