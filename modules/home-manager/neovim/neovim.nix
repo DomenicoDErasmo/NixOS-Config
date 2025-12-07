@@ -1,19 +1,10 @@
-{pkgs, ...}: let
-  neovimNightlyOverlay = import (builtins.fetchGit {
-    url = "https://github.com/nix-community/neovim-nightly-overlay.git";
-  });
-in {
-  home.packages = [
-    (import pkgs {
-      overlays = [neovimNightlyOverlay];
-    }).neovim-nightly
-  ];
-
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   programs.neovim = {
     enable = true;
-    package =
-      (import pkgs {
-        overlays = [neovimNightlyOverlay];
-      }).neovim-nightly;
+    package = inputs.neovimNightlyOverlay.packages.${pkgs.system}.default;
   };
 }

@@ -9,6 +9,8 @@
       "cjpalhdlnbpafiamejdnhcphjbkeiagm"
       # 1Password - Password manager
       "aeblfdkhhhdcdjpifhhbdiojplfjncoa"
+      # Remove YouTube recommended and shorts
+      "khncfooichmfjbepaaaebmommgaepoid"
     ];
   };
 }

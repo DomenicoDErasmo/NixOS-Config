@@ -13,12 +13,17 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    neovimNightlyOverlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     hyprland,
+    neovimNightlyOverlay,
     ...
   } @ inputs: {
     nixosConfigurations.domenico = nixpkgs.lib.nixosSystem {
@@ -26,6 +31,7 @@
       modules = [
         ./hosts/main_host/configuration.nix
         hyprland.nixosModules.default
+        neovimNightlyOverlay.nixosModules
       ];
     };
   };
