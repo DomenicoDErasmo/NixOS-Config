@@ -14,7 +14,7 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   imports = [
-    ../../modules/home-manager/chromium.nix
+    ../../modules/home-manager/brave.nix
     ../../modules/home-manager/ghostty/ghostty.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/hyprland.nix
