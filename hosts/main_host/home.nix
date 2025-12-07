@@ -19,7 +19,7 @@
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/mako/mako.nix
-    ../../modules/home-manager/notion-pwa.nix
+    ../../modules/home-manager/notion/notion.nix
     ../../modules/home-manager/rofi.nix
     ../../modules/home-manager/vscode.nix
     ../../modules/home-manager/wallpaper.nix
