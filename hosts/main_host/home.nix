@@ -14,7 +14,6 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   imports = [
-    ../../modules/home-manager/1password.nix
     ../../modules/home-manager/chromium.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/hyprland.nix
@@ -28,6 +27,7 @@
   ];
 
   home.packages = with pkgs; [
+    _1password-gui
     alejandra
     discord
     nixd
@@ -36,7 +36,7 @@
   ];
 
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    GTK_THEME = "Adwaita:dark";
   };
 
   # Let Home Manager install and manage itself.
