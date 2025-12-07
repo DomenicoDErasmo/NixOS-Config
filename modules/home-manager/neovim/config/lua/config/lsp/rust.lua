@@ -13,7 +13,7 @@ vim.lsp.config["rust_analyzer"] = {
 }
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "rs",
+	pattern = "rust",
 	callback = function()
 		vim.lsp.start(vim.lsp.config["rust_analyzer"])
 	end,
