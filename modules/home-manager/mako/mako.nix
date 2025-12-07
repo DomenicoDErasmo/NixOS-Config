@@ -1,18 +1,21 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
-  home.file.".config/mako/config".source = ../mako.conf;
-
-  home.sessionVariables = {
-    XDG_RUNTIME_DIR = "/run/user/${config.uid}";
-  };
+{pkgs, ...}: {
+  home.packages = [
+    pkgs.mako
+    pkgs.libnotify
+  ];
+  home.file.".config/mako/config".source = ./mako.conf;
 
   systemd.user.services.mako = {
-    description = "Mako Notification Daemon";
-    after = ["graphical-session.target"];
-    wantedBy = ["default.target"];
-    serviceConfig.ExecStart = "${pkgs.mako}/bin/mako";
+    Unit = {
+      Description = "Mako notification daemon";
+      after = ["graphical.target"];
+    };
+    Service = {
+      ExecStart = "${pkgs.mako}/bin/mako";
+      Restart = "on-failure";
+    };
+    Install = {
+      WantedBy = ["default.target"];
+    };
   };
 }
