@@ -1,6 +1,3 @@
--- ==========================================
--- Plugins
--- ==========================================
 vim.pack.add({
 	-- LSP config
 	{ src = "https://github.com/neovim/nvim-lspconfig" },
@@ -13,6 +10,4 @@ vim.pack.add({
 	{ src = "https://github.com/hrsh7th/cmp-buffer" },
 	{ src = "https://github.com/hrsh7th/cmp-path" },
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-    -- color scheme
-    { src = "https://github.com/Mofiqul/vscode.nvim" },
 })
