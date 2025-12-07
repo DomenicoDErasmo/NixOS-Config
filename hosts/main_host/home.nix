@@ -1,25 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}: let
-  wallpapersDir = "${config.home.homeDirectory}/Pictures/wallpapers/nature";
-  wallpaperTimerInterval = "10min";
-  wallpaperTimerBootDelay = "1min";
-  homeDirectory = config.home.homeDirectory;
-  wallpaperScript = pkgs.writeShellScriptBin "wallpaper-set" ''
-    #!/run/current-system/sw/bin/zsh
-
-    # pick random image
-    image=$(find "${wallpapersDir}" -type f | shuf -n 1)
-
-    # set wallpaper
-    ${pkgs.swww}/bin/swww img "$image" --transition-duration 1 --transition-type fade &
-
-    # store current wallpaper for other apps
-    cp -f "$image" "${homeDirectory}/current-wallpaper" &
-  '';
-in {
+{pkgs, ...}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "domenico";
@@ -42,67 +21,18 @@ in {
     ../../modules/home-manager/notion-pwa.nix
     ../../modules/home-manager/rofi.nix
     ../../modules/home-manager/vscode.nix
+    ../../modules/home-manager/wallpaper.nix
     ../../modules/home-manager/waybar/waybar.nix
     ../../modules/home-manager/wlsunset.nix
     ../../modules/home-manager/zsh/zsh.nix
   ];
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
     pkgs.zsh
     pkgs.zsh-powerlevel10k
     pkgs.meslo-lgs-nf
     pkgs.capitaine-cursors
-    wallpaperScript
   ];
-
-  systemd.user.services.wallpaper = {
-    Unit = {
-      Description = "Set random wallpaper";
-    };
-
-    Service = {
-      Type = "oneshot";
-      ExecStart = "${wallpaperScript}/bin/wallpaper-set";
-    };
-
-    Install = {
-      WantedBy = ["timers.target"];
-    };
-  };
-
-  systemd.user.timers.wallpaper = {
-    Unit = {
-      Description = "Run wallpaper service every 10 minutes";
-    };
-
-    Timer = {
-      OnBootSec = wallpaperTimerBootDelay;
-      OnUnitActiveSec = wallpaperTimerInterval;
-      AccuracySec = "1s";
-    };
-
-    Install = {
-      WantedBy = ["timers.target"];
-    };
-  };
 
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.systemd.enable = true;
@@ -110,36 +40,9 @@ in {
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-
     ".p10k.zsh".source = ../../modules/home-manager/zsh/.p10k.zsh;
   };
 
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. These will be explicitly sourced when using a
-  # shell provided by Home Manager. If you don't want to manage your shell
-  # through Home Manager then you have to manually source 'hm-session-vars.sh'
-  # located at either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/domenico/etc/profile.d/hm-session-vars.sh
-  #
   home.sessionVariables = {
     # EDITOR = "emacs";
   };

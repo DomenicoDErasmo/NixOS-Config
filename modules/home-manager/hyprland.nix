@@ -14,7 +14,6 @@
       "$mod" = "SUPER";
       bind = [
         "$mod, Q, exec, ghostty"
-        "$mod, W, exec, waybar"
         "$mod, C, killactive"
         "$mod, M, exit"
         "ALT, TAB, exec, rofi -show drun -show-icons"
