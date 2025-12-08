@@ -15,6 +15,7 @@
         pkgs.python313
         pkgs.python313Packages.pip
         pkgs.python313Packages.virtualenv
+        pkgs.pyright
         pkgs.ruff
         pkgs.mypy
       ];
