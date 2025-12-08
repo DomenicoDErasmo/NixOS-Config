@@ -3,32 +3,28 @@
   config,
   ...
 }: let
-  wallpaperDir = "${config.users.users.domenico.homeDirectory}/Downloads/wallpapers/nature";
+  wallpaperDir = "${config.home.homeDirectory}/Pictures/wallpapers/nature";
   wallpaperScript = pkgs.writeShellScriptBin "random-wallpaper" ''
-    #!/usr/bin/env bash
-    FILE=$(find "${wallpaperDir}" -type f \\( -iname "*.jpg" -o -iname "*.png" \\) | shuf -n 1)
-    swww img "$FILE"
+    WALLPAPER_DIR="${config.home.homeDirectory}/Pictures/wallpapers/nature"
+    FILE=$(find "${wallpaperDir}" -type f \( -iname '*.jpg' -o -iname '*.png' \) | shuf -n 1)
+    swww img "$FILE" --transition-duration 2
   '';
 in {
   home.packages = [wallpaperScript];
 
-  # Optionally run it on startup
-  home.sessionVariables = {
-    RANDOM_WALLPAPER_SCRIPT = wallpaperScript;
+  systemd.user.services.random-wallpaper = {
+    Unit.Description = "Random wallpaper changer";
+    Service = {
+      ExecStart = "${wallpaperScript}/bin/random-wallpaper";
+    };
   };
 
-  # Create a systemd user timer to run every 10 minutes
   systemd.user.timers.random-wallpaper = {
-    description = "Change Hyprland wallpaper every 10 minutes";
-    timerConfig = {
-      OnBootSec = "1min";
-      OnUnitActiveSec = "10min";
+    Unit.Description = "Run random wallpaper every 10 minutes";
+    Timer = {
+      OnBootSec = "1m";
+      OnUnitActiveSec = "10m";
     };
-    unitConfig = {
-      Service = {
-        ExecStart = "${wallpaperScript}";
-        Type = "oneshot";
-      };
-    };
+    Install.WantedBy = ["timers.target"];
   };
 }
