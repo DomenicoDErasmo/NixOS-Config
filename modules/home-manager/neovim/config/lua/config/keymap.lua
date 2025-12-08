@@ -19,3 +19,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, opts)
 	end,
 })
+
+-- Show diagnostic in a floating window
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show LSP Diagnostic" })
+
+-- Jump to next/previous diagnostic
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous Diagnostic" })
