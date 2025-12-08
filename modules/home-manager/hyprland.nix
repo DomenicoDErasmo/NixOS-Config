@@ -41,18 +41,18 @@
         "$mod CTRL ALT, right, movewindow, r"
         "$mod CTRL ALT, down, movewindow, d"
       ];
-      # TODO: how to un-hardcode?
+      
       monitor = [
         "DP-3,2560x1440@143.97,0x0,1"
         "HDMI-A-1,2560x1440@143.98,2560x0,1"
       ];
 
       workspace = [
-        "1,monitor:DP-3,default:true"
-        "2,monitor:DP-3"
-        "3,monitor:HDMI-A-1"
-        "4,monitor:HDMI-A-1"
-        "5,monitor:HDMI-A-1"
+        "1,default:true"
+        "2"
+        "3"
+        "4"
+        "5"
       ];
     };
   };
