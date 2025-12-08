@@ -211,5 +211,10 @@
     "clippy::verbose_file_reads",
     "-D",
     "clippy::wildcard_enum_match_arm"
-  ]
+  ],
+
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true
+  }
 }
