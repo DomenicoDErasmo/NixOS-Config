@@ -23,7 +23,6 @@
     ../../modules/home-manager/notion/notion.nix
     ../../modules/home-manager/rofi.nix
     ../../modules/home-manager/vscode.nix
-    ../../modules/home-manager/wallpaper.nix
     ../../modules/home-manager/waybar/waybar.nix
     ../../modules/home-manager/zsh/zsh.nix
   ];

@@ -35,10 +35,11 @@
         "$mod SHIFT, 3, movetoworkspace, 3"
         "$mod SHIFT, 4, movetoworkspace, 4"
         "$mod SHIFT, 5, movetoworkspace, 5"
-        "$mod ALT, left, movewindow, l"
-        "$mod ALT, up, movewindow, u"
-        "$mod ALT, right, movewindow, r"
-        "$mod ALT, down, movewindow, d"
+        # Trying to keep keybinds consistent between work and PC
+        "$mod CTRL ALT, left, movewindow, l"
+        "$mod CTRL ALT, up, movewindow, u"
+        "$mod CTRL ALT, right, movewindow, r"
+        "$mod CTRL ALT, down, movewindow, d"
       ];
       # TODO: how to un-hardcode?
       monitor = [
