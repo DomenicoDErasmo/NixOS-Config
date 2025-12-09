@@ -12,6 +12,8 @@
     pkgs.lua-language-server
     # Rustfmt
     pkgs.rustfmt
+    # Python language server
+    pkgs.pyright
   ];
 
   programs.neovim = {

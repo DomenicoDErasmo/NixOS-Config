@@ -16,7 +16,8 @@
         pkgs.python313Packages.pip
         pkgs.python313Packages.virtualenv
         pkgs.pyright
-        pkgs.ruff
+        pkgs.pylint
+        pkgs.black
         pkgs.mypy
         pkgs.zsh
       ];
