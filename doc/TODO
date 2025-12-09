@@ -1,7 +1,6 @@
 # TODO List
 - [ ] Neovim Config
-    - [ ] Nix
-    - [ ] C++
     - [ ] Plugins? fzf, telescope, airline?
+    - [ ] C++
 - [ ] Dev setup
     - [ ] C++

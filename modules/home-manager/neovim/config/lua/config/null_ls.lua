@@ -19,6 +19,11 @@ null_ls.setup({
             filetypes = { "python" },
         }),
         null_ls.builtins.diagnostics.mypy.with({ filetypes = { "python" } }),
+
+        -- Nix
+        null_ls.builtins.formatting.alejandra.with({
+            filetypes = { "nix" },
+        }),
     },
 
     on_attach = function(client, bufnr)
