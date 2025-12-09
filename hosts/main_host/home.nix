@@ -63,6 +63,9 @@
     # View system details
     neofetch
 
+    # Better grep
+    ripgrep
+
     # CLI pipe animation
     pipes
 
