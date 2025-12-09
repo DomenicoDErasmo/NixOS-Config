@@ -18,9 +18,11 @@
         pkgs.pyright
         pkgs.ruff
         pkgs.mypy
+        pkgs.zsh
       ];
 
       shellHook = ''
+        zsh
         echo "Welcome to the Python dev shell!"
         export PYTHONWARNINGS="ignore"
       '';
