@@ -42,8 +42,12 @@
         "$mod CTRL ALT, down, movewindow, d"
       ];
 
-      decoration = {
-        rounding = 16;
+      general = {
+        layout = "dwindle";
+      };
+
+      dwindle = {
+        force_split = 2;
       };
 
       monitor = [
