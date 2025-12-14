@@ -35,6 +35,9 @@
     # Nix Formatter
     alejandra
 
+    # Study tool
+    anki
+
     # Sound visualizer
     cava
 
