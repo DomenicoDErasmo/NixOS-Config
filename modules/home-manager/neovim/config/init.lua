@@ -12,3 +12,9 @@ require("config.lsp.lua")
 require("config.lsp.nix")
 require("config.lsp.python")
 require("config.lsp.rust")
+
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		vim.cmd("ToggleTerm")
+	end,
+})
