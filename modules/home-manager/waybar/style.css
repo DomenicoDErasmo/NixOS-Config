@@ -1,12 +1,13 @@
 window#waybar {
-  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0);
   color: #ffffff;
 }
 
-#custom-sound_icon {
-  padding-left: 8px;
-  padding-right: 2px;
-  font-size: 18px;
+.module {
+  background-color: #000000;
+  padding: 2px 2px;
+  margin: 4px 6px;
+  border-radius: 8px;
 }
 
 #pulseaudio-slider slider {

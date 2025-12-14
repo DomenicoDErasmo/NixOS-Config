@@ -9,11 +9,7 @@
           "hyprland/workspaces"
           "custom/rofi"
         ];
-        modules-center = [
-          "hyprland/window"
-        ];
         modules-right = [
-          "custom/sound_icon"
           "pulseaudio/slider"
           "clock"
           "custom/power"
@@ -27,9 +23,6 @@
         clock = {
           format = "    {:%Y-%m-%d      %I:%M %p}";
           "tooltip" = false;
-        };
-        "custom/sound_icon" = {
-          format = "󰕾";
         };
         "hyprland/workspaces" = {
           on-click = "activate";

@@ -15,4 +15,3 @@ vim.pack.add({
 	-- TODO highlighting
 	{ src = "https://github.com/folke/todo-comments.nvim" },
 })
-
