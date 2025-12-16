@@ -40,12 +40,7 @@
         "custom/power" = {
           "format" = "⏻ ";
           "tooltip" = false;
-          "menu" = "on-click";
           "menu-file" = "~/.config/waybar/power_menu.sh";
-          "menu-actions" = {
-            "shutdown" = "sudo shutdown";
-            "reboot" = "sudo reboot";
-          };
         };
 
         "hyprland/workspaces" = {
