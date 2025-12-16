@@ -9,11 +9,14 @@
           "hyprland/workspaces"
           "custom/rofi"
         ];
+
         modules-right = [
           "pulseaudio/slider"
           "clock"
           "custom/weather"
+          "custom/power"
         ];
+
         "custom/rofi" = {
           format = "Apps";
           "on-click" = "rofi -show drun -show-icons";
@@ -32,6 +35,19 @@
           "interval" = 3600;
           "exec" = "wttrbar --fahrenheit";
           "return-type" = "json";
+        };
+
+        "custom/power" = {
+          "format" = "⏻ ";
+          "tooltip" = false;
+          "menu" = "on-click";
+          "menu-file" = "~/.config/waybar/power_menu.xml";
+          "menu-actions" = {
+            "shutdown" = "shutdown";
+            "reboot" = "reboot";
+            "suspend" = "systemctl suspend";
+            "hibernate" = "systemctl hibernate";
+          };
         };
 
         "hyprland/workspaces" = {
@@ -78,4 +94,6 @@
       Type = "simple";
     };
   };
+
+  home.file.".config/waybar/power_menu.xml".source = ./power_menu.xml;
 }
