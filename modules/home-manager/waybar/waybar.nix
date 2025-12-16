@@ -41,7 +41,7 @@
           "format" = "⏻ ";
           "tooltip" = false;
           "menu" = "on-click";
-          "menu-file" = "~/.config/waybar/power_menu.xml";
+          "menu-file" = "~/.config/waybar/power_menu.sh";
           "menu-actions" = {
             "shutdown" = "sudo shutdown";
             "reboot" = "sudo reboot";
@@ -93,5 +93,5 @@
     };
   };
 
-  home.file.".config/waybar/power_menu.xml".source = ./power_menu.xml;
+  home.file.".config/waybar/power_menu.sh".source = ./power_menu.sh;
 }
