@@ -5,5 +5,6 @@ pkgs.mkShell {
     clang-tools
     lldb
     cmake
+    gcc
   ];
 }
