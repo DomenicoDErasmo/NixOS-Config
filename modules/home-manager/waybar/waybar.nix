@@ -40,7 +40,7 @@
         "custom/power" = {
           "format" = "⏻ ";
           "tooltip" = false;
-          "menu-file" = "~/.config/waybar/power_menu.sh";
+          "on-click" = "~/.config/waybar/power_menu.sh";
         };
 
         "hyprland/workspaces" = {
