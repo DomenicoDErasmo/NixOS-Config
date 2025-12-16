@@ -22,7 +22,11 @@
         gcc
       ];
 
-      shell = pkgs.zsh;
+      shellHook = ''
+        if [ -z "$ZSH_VERSION" ]; then
+          exec zsh
+        fi
+      '';
     };
   };
 }
