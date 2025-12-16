@@ -1,5 +1,3 @@
-local rustfmt_cmd = os.getenv("HOME") .. "/.nix-profile/bin/rustfmt"
-
 vim.lsp.config["rust_analyzer"] = {
 	cmd = { vim.fn.exepath("rust-analyzer") },
 	settings = {
@@ -208,4 +206,3 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.lsp.start(vim.lsp.config["rust_analyzer"])
 	end,
 })
-
