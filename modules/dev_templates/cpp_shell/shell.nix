@@ -1,5 +1,7 @@
-{pkgs, ...}: {
-  packages = with pkgs; [
+{pkgs ? import <nixpkgs> {}}:
+pkgs.mkShell {
+  nativeBuildInputs = with pkgs; [
+    clang
     clang-tools
     lldb
     cmake
