@@ -12,18 +12,28 @@
         modules-right = [
           "pulseaudio/slider"
           "clock"
-          "custom/power"
+          "custom/weather"
         ];
         "custom/rofi" = {
           format = "Apps";
           "on-click" = "rofi -show drun -show-icons";
         };
+
         # The hollow squares are icons taken from Ubuntu Nerd Font.
         # I couldn't get these to show up in VSCode.
         clock = {
           format = "    {:%Y-%m-%d      %I:%M %p}";
           "tooltip" = false;
         };
+
+        "custom/weather" = {
+          "format" = "{}°";
+          "tooltip" = true;
+          "interval" = 3600;
+          "exec" = "wttrbar --fahrenheit";
+          "return-type" = "json";
+        };
+
         "hyprland/workspaces" = {
           on-click = "activate";
           format = "{icon}";

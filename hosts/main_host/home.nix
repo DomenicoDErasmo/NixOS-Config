@@ -77,6 +77,9 @@
 
     # Redlight
     wlsunset
+
+    # Weather in Wayland
+    wttrbar
   ];
 
   # For certain Electron apps like 1password
