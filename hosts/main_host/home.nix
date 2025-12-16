@@ -72,6 +72,9 @@
     # CLI pipe animation
     pipes
 
+    # CSS LSP
+    vscode-css-languageserver
+
     # Wikipedia TUI
     wiki-tui
 
