@@ -38,6 +38,9 @@
     # Study tool
     anki
 
+    # Bash LSP
+    bash-language-server
+
     # Sound visualizer
     cava
 
