@@ -49,6 +49,8 @@ in {
     shell = pkgs.zsh;
   };
 
+  security.sudo.wheelNeedsPassword = false;
+
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     useGlobalPkgs = true;

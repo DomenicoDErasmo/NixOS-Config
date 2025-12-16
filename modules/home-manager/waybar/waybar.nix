@@ -43,10 +43,8 @@
           "menu" = "on-click";
           "menu-file" = "~/.config/waybar/power_menu.xml";
           "menu-actions" = {
-            "shutdown" = "shutdown";
-            "reboot" = "reboot";
-            "suspend" = "systemctl suspend";
-            "hibernate" = "systemctl hibernate";
+            "shutdown" = "sudo shutdown";
+            "reboot" = "sudo reboot";
           };
         };
 
