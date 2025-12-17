@@ -1,5 +1,5 @@
 OPTIONS=" Reboot\n⏻ Shutdown"
-CHOSEN=$(printf "$OPTIONS" | rofi -dmenu -i -p "Power")
+CHOSEN=$(printf "%b" "$OPTIONS" | rofi -dmenu -i -p "Power")
 
 case "$CHOSEN" in
   *Reboot)     sudo systemctl reboot ;;
