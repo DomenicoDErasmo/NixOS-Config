@@ -1,4 +1,3 @@
-
 local stylua_cmd = os.getenv("HOME") .. "/.nix-profile/bin/stylua"
 
 local null_ls = require("null-ls")
@@ -12,7 +11,7 @@ null_ls.setup({
 
         -- Python
         null_ls.builtins.formatting.black.with({
-            extra_args = { "--fast" },  -- optional, speeds up formatting
+            extra_args = { "--fast" }, -- optional, speeds up formatting
             filetypes = { "python" },
         }),
         null_ls.builtins.diagnostics.pylint.with({
@@ -24,6 +23,9 @@ null_ls.setup({
         null_ls.builtins.formatting.alejandra.with({
             filetypes = { "nix" },
         }),
+
+        -- C++
+        null_ls.builtins.formatting.clang_format,
     },
 
     on_attach = function(client, bufnr)
@@ -41,5 +43,6 @@ null_ls.setup({
 
 -- Optional: create :Format command
 vim.api.nvim_create_user_command("Format", function()
-	vim.lsp.buf.format({ async = true })
+    vim.lsp.buf.format({ async = true })
 end, {})
+
