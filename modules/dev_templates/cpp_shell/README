@@ -1,0 +1,7 @@
+# Build Instructions
+
+1. Copy all contents (including .clangd) to your project root.
+2. Enter the dev shell with `nix develop ./#default`
+3. Add a default `hello.cpp` file to your project root (will have to fix later)
+4. Generate `./build/compile_commands.json` with `cmake -S . -B build -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON`
+5. Link this `./build/compile_commands.json` to your project root with `ln -sf ./build/compile_commands.json .`

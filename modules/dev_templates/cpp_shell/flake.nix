@@ -1,6 +1,4 @@
 {
-  description = "C++ development shell with clang, lldb, cmake, and Zsh";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
@@ -15,11 +13,9 @@
   in {
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
-        clang
-        clang-tools
-        lldb
+        llvmPackages_21.clang
+        llvmPackages_21.clang-tools
         cmake
-        gcc
       ];
 
       shellHook = ''
