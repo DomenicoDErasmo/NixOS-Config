@@ -16,6 +16,7 @@
         llvmPackages_21.clang
         llvmPackages_21.clang-tools
         cmake
+        cmake-language-server
       ];
 
       shellHook = ''
