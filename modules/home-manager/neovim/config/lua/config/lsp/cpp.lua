@@ -1,5 +1,11 @@
 vim.lsp.config["cpp"] = {
-    cmd = { "clangd", "--query-driver=/nix/store/*-clang-wrapper-*/bin/clang++" },
+    cmd = {
+        "clangd",
+        "--query-driver=/nix/store/*-clang-wrapper-*/bin/clang++",
+        "--background-index",
+        "--clang-tidy",
+        "--header-insertion=iwyu",
+    },
 }
 
 vim.api.nvim_create_autocmd("FileType", {
