@@ -60,6 +60,9 @@
     # Performance measuring
     hyperfine
 
+    # Markdown Linting
+    markdownlint-cli
+
     # Markdown LSP
     marksman
 

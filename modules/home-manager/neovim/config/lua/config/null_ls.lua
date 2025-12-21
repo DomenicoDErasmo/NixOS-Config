@@ -26,6 +26,9 @@ null_ls.setup({
 
         -- C++
         null_ls.builtins.formatting.clang_format,
+
+        -- Markdown
+        null_ls.builtins.formatting.markdownlint,
     },
 
     on_attach = function(client, bufnr)
