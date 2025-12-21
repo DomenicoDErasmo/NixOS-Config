@@ -60,6 +60,9 @@
     # Performance measuring
     hyperfine
 
+    # Markdown LSP
+    marksman
+
     # TUI Spotify
     ncspot
 
