@@ -17,6 +17,8 @@
         llvmPackages_21.clang-tools
         cmake
         cmake-language-server
+        gtest
+        gdb
       ];
 
       shellHook = ''
