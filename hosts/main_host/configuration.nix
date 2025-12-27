@@ -41,6 +41,8 @@ in {
 
   programs.zsh.enable = true;
 
+  networking.networkmanager.enable = true;
+
   users.users.domenico = {
     isNormalUser = true;
     initialPassword = "domo";
