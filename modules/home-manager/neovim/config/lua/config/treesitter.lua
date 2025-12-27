@@ -2,7 +2,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 })
 
-require("nvim-treesitter.configs").setup({
+require("nvim-treesitter").setup({
     ensure_installed = { "lua", "rust", "cpp", "python", "css", "cmake", "markdown", "nix", "bash" },
     highlight = {
         enable = true,
