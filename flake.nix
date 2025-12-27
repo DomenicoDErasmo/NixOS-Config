@@ -26,13 +26,23 @@
     neovimNightlyOverlay,
     ...
   } @ inputs: {
-    nixosConfigurations.domenico = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hosts/main_host/configuration.nix
-        hyprland.nixosModules.default
-        neovimNightlyOverlay.nixosModules
-      ];
+    nixosConfigurations = {
+      desktop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/desktop/configuration.nix
+          hyprland.nixosModules.default
+          neovimNightlyOverlay.nixosModules
+        ];
+      };
+      laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/laptop/configuration.nix
+          hyprland.nixosModules.default
+          neovimNightlyOverlay.nixosModules
+        ];
+      };
     };
   };
 }
