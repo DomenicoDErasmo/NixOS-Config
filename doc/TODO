@@ -4,5 +4,4 @@
   - [ ] Add good linter for C++ (such as sonarlint, anything else instead?)
   - [ ] Add debugger for C++
 - [ ] Waybar
-  - [ ] Add battery module
   - [ ] Add Wi-Fi module
