@@ -11,9 +11,9 @@
         ];
 
         modules-right = [
-          "pulseaudio/slider"
           "clock"
           "custom/weather"
+          "battery"
           "custom/power"
         ];
 
@@ -63,11 +63,6 @@
         };
 
         layer = "top";
-        "pulseaudio/slider" = {
-          min = 0;
-          max = 100;
-          orientation = "horizontal";
-        };
       }
     ];
   };
