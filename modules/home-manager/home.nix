@@ -75,11 +75,14 @@
     # View system details
     neofetch
 
-    # Better grep
-    ripgrep
+    # Paint
+    pinta
 
     # CLI pipe animation
     pipes
+
+    # Better grep
+    ripgrep
 
     # CSS LSP
     vscode-css-languageserver
