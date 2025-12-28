@@ -14,18 +14,18 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   imports = [
-    ../../modules/home-manager/brave.nix
-    ../../modules/home-manager/ghostty/ghostty.nix
-    ../../modules/home-manager/git.nix
-    ../../modules/home-manager/hyprland.nix
-    ../../modules/home-manager/mako/mako.nix
-    ../../modules/home-manager/neovim/neovim.nix
-    ../../modules/home-manager/notion/notion.nix
-    ../../modules/home-manager/rofi.nix
-    ../../modules/home-manager/vscode.nix
-    ../../modules/home-manager/wallpaper.nix
-    ../../modules/home-manager/waybar/waybar.nix
-    ../../modules/home-manager/zsh/zsh.nix
+    ./brave.nix
+    ./ghostty/ghostty.nix
+    ./git.nix
+    ./hyprland.nix
+    ./mako/mako.nix
+    ./neovim/neovim.nix
+    ./notion/notion.nix
+    ./rofi.nix
+    ./vscode.nix
+    ./wallpaper.nix
+    ./waybar/waybar.nix
+    ./zsh/zsh.nix
   ];
 
   home.packages = with pkgs; [
