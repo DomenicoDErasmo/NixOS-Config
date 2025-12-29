@@ -10,8 +10,10 @@ vim.o.softtabstop = 2
 vim.o.autoindent = true
 vim.o.smartindent = true
 
-vim.o.foldmethod = "syntax"
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldenable = true
 
 -- Start with everything unfolded
-vim.o.foldlevel = 99
-vim.o.foldlevelstart = 99
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
