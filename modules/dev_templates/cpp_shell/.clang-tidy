@@ -4,8 +4,6 @@ Checks: >
   performance-*,
   modernize-*,
   readability-*,
-  cppcoreguidelines-special-member-functions,
-  cppcoreguidelines-rule-of-five,
   cppcoreguidelines-noexcept-move-operations,
 
   -modernize-use-auto,
