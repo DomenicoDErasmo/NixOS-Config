@@ -1,10 +1,20 @@
 Checks: >
+  clang-analyzer-*,
   bugprone-*,
   performance-*,
-  readability-*,
   modernize-*,
-  cppcoreguidelines-*,
-  clang-analyzer-*
+  readability-*,
+  cppcoreguidelines-special-member-functions,
+  cppcoreguidelines-rule-of-five,
+  cppcoreguidelines-noexcept-move-operations,
+
+  -modernize-use-auto,
+  -modernize-use-trailing-return-type,
+  -readability-magic-numbers,
+  -readability-function-cognitive-complexity,
+  -readability-identifier-length,
+  -cppcoreguidelines-pro-bounds-pointer-arithmetic,
+  -cppcoreguidelines-pro-type-reinterpret-cast
 
 WarningsAsErrors: ''
 HeaderFilterRegex: '.*'
