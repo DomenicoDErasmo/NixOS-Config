@@ -17,6 +17,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
     -- Signature help (in insert mode)
     vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, opts)
+    -- Apply code fix (if available)
+    vim.keymap.set("n", "gf", function()
+      local diagnostics = vim.diagnostic.get(0)
+      vim.lsp.buf.code_action({
+        apply = true,
+        context = { only = { "quickfix", "source.fixAll" }, diagnostics = diagnostics },
+      })
+    end, opts)
   end,
 })
 
@@ -24,8 +32,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show LSP Diagnostic" })
 
 -- Jump to next/previous diagnostic
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous Diagnostic" })
+vim.keymap.set("n", "]d", function()
+  vim.diagnostic.jump({ count = 1, float = true })
+end, { desc = "Next Diagnostic" })
+vim.keymap.set("n", "[d", function() 
+  vim.diagnostic.jump({count = -1, float = true})
+end, { desc = "Previous Diagnostic" })
 
 -- Create a fold keymap group
 local opts = { noremap = true, silent = true }
