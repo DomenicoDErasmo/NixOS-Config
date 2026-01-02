@@ -60,6 +60,9 @@
     # Performance measuring
     hyperfine
 
+    # JSON parsing
+    jq
+
     # Markdown Linting
     markdownlint-cli
 
