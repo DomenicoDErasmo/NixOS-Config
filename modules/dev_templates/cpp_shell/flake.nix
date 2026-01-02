@@ -22,10 +22,15 @@
         glibc.dev
       ];
 
-      # Force clang++ / clang as default compiler
       shellHook = ''
-        export CC=clang
-        export CXX=clang++
+        export CC=${pkgs.clang}/bin/clang
+        export CXX=${pkgs.clang}/bin/clang++
+
+        export LIBCXX_INCLUDE_DIR=${pkgs.llvmPackages_21.libcxx.dev}/include/c++/v1
+        export LIBCXX_LIB_DIR=${pkgs.llvmPackages_21.libcxx.out}/lib
+
+        export PATH=${pkgs.clang}/bin:$PATH
+
         if [ -z "$ZSH_VERSION" ]; then
           exec zsh
         fi
