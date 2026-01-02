@@ -1,16 +1,16 @@
 vim.lsp.config["cpp"] = {
-    cmd = {
-        "clangd",
-        "--query-driver=/nix/store/*-clang-wrapper-*/bin/clang++",
-        "--background-index",
-        "--clang-tidy",
-        "--header-insertion=iwyu",
-    },
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--clang-tidy",
+    "--header-insertion=iwyu",
+    "--compile-commands-dir=" .. vim.loop.cwd(),
+  },
 }
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "cpp",
-    callback = function()
-        vim.lsp.start(vim.lsp.config["cpp"])
-    end,
+  pattern = "cpp",
+  callback = function()
+    vim.lsp.start(vim.lsp.config["cpp"])
+  end,
 })
