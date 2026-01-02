@@ -32,6 +32,9 @@ add_subdirectory(external/googletest)
 # Output binaries to bin/
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
+# Include helpers
+include(cmake/Helpers.cmake)
+
 # Add exercises
 add_subdirectory(exercises)
 
