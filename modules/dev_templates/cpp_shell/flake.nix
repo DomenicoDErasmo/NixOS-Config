@@ -26,6 +26,9 @@
         export CC=${pkgs.clang}/bin/clang
         export CXX=${pkgs.clang}/bin/clang++
 
+        export C_INCLUDE_PATH=$C_INCLUDE_PATH:${pkgs.glibc.dev}/include
+        export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:${pkgs.glibc.dev}/include
+
         export LIBCXX_INCLUDE_DIR=${pkgs.llvmPackages_21.libcxx.dev}/include/c++/v1
         export LIBCXX_LIB_DIR=${pkgs.llvmPackages_21.libcxx.out}/lib
 
