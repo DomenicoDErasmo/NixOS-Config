@@ -1,9 +1,14 @@
 cmake_minimum_required(VERSION 3.28)
 project(roadmap_study_cpp LANGUAGES CXX)
 
+# Default build type to debug
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Debug CACHE STRING "Build type" FORCE)
+endif()
+
 # Use compiler from environment
 if(DEFINED ENV{CC})
-  set(CMAKE_C_COMPILER   $ENV{CC})
+  set(CMAKE_C_COMPILER $ENV{CC})
 endif()
 if(DEFINED ENV{CXX})
   set(CMAKE_CXX_COMPILER $ENV{CXX})
@@ -25,6 +30,21 @@ if(DEFINED ENV{LIBCXX_LIB_DIR})
 endif()
 
 enable_testing()
+
+include(FetchContent)
+
+set(FETCHCONTENT_BASE_DIR "${CMAKE_BINARY_DIR}/_deps")
+
+FetchContent_Declare(
+  googletest 
+  GIT_REPOSITORY https://github.com/google/googletest.git 
+  GIT_TAG v1.17.0
+)
+
+FetchContent_GetProperties(googletest)
+if(NOT googletest_POPULATED)
+  FetchContent_MakeAvailable(googletest)
+endif()
 
 # GoogleTest submodule
 find_package(GTest REQUIRED)
