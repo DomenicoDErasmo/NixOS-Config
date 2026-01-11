@@ -20,6 +20,7 @@
         cmake-language-server
         gdb
         glibc.dev
+        gtest
       ];
 
       shellHook = ''
@@ -33,6 +34,9 @@
         export LIBCXX_LIB_DIR=${pkgs.llvmPackages_21.libcxx.out}/lib
 
         export PATH=${pkgs.clang}/bin:$PATH
+
+        export GTEST_ROOT=${pkgs.gtest}
+        export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$GTEST_ROOT
 
         if [ -z "$ZSH_VERSION" ]; then
           exec zsh

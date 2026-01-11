@@ -27,7 +27,8 @@ endif()
 enable_testing()
 
 # GoogleTest submodule
-add_subdirectory(external/googletest)
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
 
 # Output binaries to bin/
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
