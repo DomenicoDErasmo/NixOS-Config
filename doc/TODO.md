@@ -1,7 +1,6 @@
 # TODO List
 
 - [ ] Finish C++ tooling
-  - [ ] Add DAP neovim plugin for C++
   - [ ] Add profiler (like perfanno)
 - [ ] Waybar
   - [ ] Add Wi-Fi module
