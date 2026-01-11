@@ -1,7 +1,7 @@
 # TODO List
 
 - [ ] Finish C++ tooling
-  - [ ] Add good linter for C++ (such as sonarlint, anything else instead?)
-  - [ ] Add debugger for C++
+  - [ ] Add DAP neovim plugin for C++
+  - [ ] Add profiler (like perfanno)
 - [ ] Waybar
   - [ ] Add Wi-Fi module
