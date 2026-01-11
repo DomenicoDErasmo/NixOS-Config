@@ -9,6 +9,7 @@ require("config.telescope")
 require("config.oil")
 require("config.toggleterm")
 require("config.rainbow_delimiters")
+require("config.perfanno")
 
 require("config.debugger.plugins")
 require("config.debugger.dap")

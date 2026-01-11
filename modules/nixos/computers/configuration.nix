@@ -36,6 +36,8 @@ in {
     waybar
     swww
     home-manager
+    perf
+    flamegraph
   ];
 
   programs.zsh.enable = true;
