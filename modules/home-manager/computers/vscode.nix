@@ -29,7 +29,7 @@
       ];
 
       # hack to allow for easy LSP
-      userSettings = builtins.fromJSON (builtins.readFile ../../.vscode/settings.json);
+      userSettings = builtins.fromJSON (builtins.readFile ../../../.vscode/settings.json);
     };
   };
 }

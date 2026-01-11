@@ -61,10 +61,17 @@
     };
 
     homeConfigurations = {
-      domenico = home-manager.lib.homeManagerConfiguration {
+      computers = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux // {config = {allowUnfree = true;};};
         modules = [
-          ./modules/home-manager/home.nix
+          ./modules/home-manager/computers/home.nix
+        ];
+        extraSpecialArgs = {inherit inputs;};
+      };
+      wsl = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux // {config = {allowUnfree = true;};};
+        modules = [
+          ./modules/home-manager/wsl/home.nix
         ];
         extraSpecialArgs = {inherit inputs;};
       };
