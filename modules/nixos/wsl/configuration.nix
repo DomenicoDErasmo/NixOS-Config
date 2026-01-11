@@ -5,18 +5,52 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
+  nixpkgs.hostPlatform = "x86_64-linux";
   wsl.enable = true;
   wsl.defaultUser = "nixos";
+  
+  imports = [
+    inputs.home-manager.nixosModules.default
+  ];
+# Set your time zone.
+  time.timeZone = "America/New_York";
+
+  # Unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    neovim
+    wget
+    git
+    zsh
+  ]; 
+
+programs.zsh.enable = true;
+users.users.domenico = {
+    isNormalUser = true;
+    initialPassword = "domo";
+    description = "Domenico D'Erasmo";
+    extraGroups = ["networkmanager" "wheel"];
+    shell = pkgs.zsh;
+  };
+
+  security.sudo.wheelNeedsPassword = false;
+
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    useGlobalPkgs = true;
+    users = {
+      "domenico" = import ../../home-manager/wsl/home.nix;
+    };
+  };
+
  # Allow flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It's perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+
   system.stateVersion = "25.05"; # Did you read the comment?
 }
