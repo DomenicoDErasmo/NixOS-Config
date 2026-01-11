@@ -35,7 +35,7 @@
       desktop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
-          ./modules/nixos/configuration.nix
+          ./modules/nixos/computers/configuration.nix
           ./hosts/desktop/hardware-configuration.nix
           hyprland.nixosModules.default
           neovimNightlyOverlay.nixosModules
@@ -44,7 +44,7 @@
       laptop = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
-          ./modules/nixos/configuration.nix
+          ./modules/nixos/computers/configuration.nix
           ./hosts/laptop/hardware-configuration.nix
           hyprland.nixosModules.default
           neovimNightlyOverlay.nixosModules
