@@ -10,9 +10,10 @@ require("config.oil")
 require("config.toggleterm")
 require("config.rainbow_delimiters")
 
-require("debugger.plugins")
-require("debugger.dap")
-require("debugger.dap-ui")
+require("config.debugger.plugins")
+require("config.debugger.dap")
+require("config.debugger.dap-ui")
+require("config.debugger.keymap")
 
 require("config.lsp.lua")
 require("config.lsp.nix")
