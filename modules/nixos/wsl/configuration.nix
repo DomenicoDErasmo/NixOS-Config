@@ -10,7 +10,7 @@
 {
   nixpkgs.hostPlatform = "x86_64-linux";
   wsl.enable = true;
-  wsl.defaultUser = "nixos";
+  wsl.defaultUser = "domenico";
   
   imports = [
     inputs.home-manager.nixosModules.default
@@ -33,6 +33,7 @@
 programs.zsh.enable = true;
 users.users.domenico = {
     isNormalUser = true;
+    uid = 1000;
     initialPassword = "domo";
     description = "Domenico D'Erasmo";
     extraGroups = ["networkmanager" "wheel"];

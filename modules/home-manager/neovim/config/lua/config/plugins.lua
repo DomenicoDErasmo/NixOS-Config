@@ -14,4 +14,6 @@ vim.pack.add({
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 	-- TODO highlighting
 	{ src = "https://github.com/folke/todo-comments.nvim" },
+	-- Syntax parser
+	{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 })
