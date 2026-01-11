@@ -14,7 +14,6 @@ require("config.debugger.plugins")
 require("config.debugger.dap")
 require("config.debugger.dap-ui")
 require("config.debugger.keymap")
-require("config.debugger.persistent-breakpoints")
 
 require("config.lsp.lua")
 require("config.lsp.nix")
