@@ -102,6 +102,7 @@
 
   # For certain Electron apps like 1password
   home.sessionVariables = {
+    # For more dark themes
     GTK_THEME = "Adwaita:dark";
   };
 

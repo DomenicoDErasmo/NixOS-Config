@@ -28,6 +28,7 @@
     nixpkgs,
     hyprland,
     neovimNightlyOverlay,
+    home-manager,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -50,12 +51,22 @@
         ];
       };
       wsl = nixpkgs.lib.nixosSystem {
-	specialArgs = {inherit inputs;};
-	modules = [
-	  inputs.nixos-wsl.nixosModules.default
-	  ./modules/nixos/wsl/configuration.nix
-	  neovimNightlyOverlay.nixosModules
-	];
+        specialArgs = {inherit inputs;};
+        modules = [
+          inputs.nixos-wsl.nixosModules.default
+          ./modules/nixos/wsl/configuration.nix
+          neovimNightlyOverlay.nixosModules
+        ];
+      };
+    };
+
+    homeConfigurations = {
+      domenico = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux // {config = {allowUnfree = true;};};
+        modules = [
+          ./modules/home-manager/home.nix
+        ];
+        extraSpecialArgs = {inherit inputs;};
       };
     };
   };

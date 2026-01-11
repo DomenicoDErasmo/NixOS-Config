@@ -35,6 +35,7 @@ in {
     rofi
     waybar
     swww
+    home-manager
   ];
 
   programs.zsh.enable = true;
@@ -50,14 +51,6 @@ in {
   };
 
   security.sudo.wheelNeedsPassword = false;
-
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    useGlobalPkgs = true;
-    users = {
-      "domenico" = import ../home-manager/home.nix;
-    };
-  };
 
   services.greetd = {
     enable = true;
