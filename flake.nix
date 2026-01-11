@@ -17,6 +17,10 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -48,6 +52,7 @@
       wsl = nixpkgs.lib.nixosSystem {
 	specialArgs = {inherit inputs;};
 	modules = [
+	  inputs.nixos-wsl.nixosModules.default
 	  ./modules/nixos/wsl/configuration.nix
 	  neovimNightlyOverlay.nixosModules
 	];
