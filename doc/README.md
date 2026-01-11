@@ -4,4 +4,5 @@ Installing
 2. Copy the hardware-configuration.nix in /etc/nixos to the folder
 3. Copy the configuration.nix from some other host to the folder
 4. Add a flake for the host to flake.nix
-5. sudo nixos-rebuild switch --flake ./#(flake_name)
+5. Build system: `sudo nixos-rebuild switch --flake ./#(flake_name)`
+6. Switching to home manager: `home-manager switch --flake ./#domenico`
