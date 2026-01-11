@@ -1,25 +1,29 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
-
-{ config, lib, pkgs, inputs, ... }:
-
 {
-  nixpkgs.hostPlatform = "x86_64-linux";
-  wsl.enable = true;
-  wsl.defaultUser = "domenico";
-  
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     inputs.home-manager.nixosModules.default
   ];
-# Set your time zone.
-  time.timeZone = "America/New_York";
 
-  # Unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    hostPlatform = "x86_64-linux";
+    config.allowUnfree = true;
+  };
+
+  wsl = {
+    enable = true;
+    defaultUser = "domenico";
+  };
+
+  # Set your time zone.
+  time.timeZone = "America/New_York";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -28,10 +32,11 @@
     wget
     git
     zsh
-  ]; 
+  ];
 
-programs.zsh.enable = true;
-users.users.domenico = {
+  programs.zsh.enable = true;
+
+  users.users.domenico = {
     isNormalUser = true;
     uid = 1000;
     initialPassword = "domo";
@@ -50,7 +55,7 @@ users.users.domenico = {
     };
   };
 
- # Allow flakes
+  # Allow flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   system.stateVersion = "25.05"; # Did you read the comment?
