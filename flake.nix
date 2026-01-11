@@ -45,6 +45,13 @@
           neovimNightlyOverlay.nixosModules
         ];
       };
+      wsl = nixpkgs.lib.nixosSystem {
+	specialArgs = {inherit inputs;};
+	modules = [
+	  ./modules/nixos/wsl/configuration.nix
+	  neovimNightlyOverlay.nixosModules
+	];
+      };
     };
   };
 }
