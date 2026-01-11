@@ -6,6 +6,10 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Debug CACHE STRING "Build type" FORCE)
 endif()
 
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+  add_compile_options(-g -fno-omit-frame-pointer)
+endif()
+
 # Use compiler from environment
 if(DEFINED ENV{CC})
   set(CMAKE_C_COMPILER $ENV{CC})
