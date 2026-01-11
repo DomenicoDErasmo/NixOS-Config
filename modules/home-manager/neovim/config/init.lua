@@ -9,6 +9,11 @@ require("config.telescope")
 require("config.oil")
 require("config.toggleterm")
 require("config.rainbow_delimiters")
+
+require("debugger.plugins")
+require("debugger.dap")
+require("debugger.dap-ui")
+
 require("config.lsp.lua")
 require("config.lsp.nix")
 require("config.lsp.python")
