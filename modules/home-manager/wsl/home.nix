@@ -14,9 +14,9 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   imports = [
-    ../git.nix
-    ../neovim/neovim.nix
-    ../zsh/zsh.nix
+    ../computers/git.nix
+    ../computers/neovim/neovim.nix
+    ../computers/zsh/zsh.nix
   ];
 
   home.packages = with pkgs; [
