@@ -8,7 +8,7 @@
 }: let
   hyprlandStartup = pkgs.writeShellScriptBin "hyprland-init" ''
     export GTK_THEME=Adwaita:dark
-    ${pkgs.hyprland}/bin/Hyprland
+    ${pkgs.hyprland}/bin/start-hyprland
   '';
 in {
   imports = [
