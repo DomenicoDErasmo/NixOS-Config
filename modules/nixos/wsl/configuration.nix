@@ -46,6 +46,8 @@
     shell = pkgs.zsh;
   };
 
+  nix.settings.trusted-users = ["root" "domenico"];
+
   security.sudo.wheelNeedsPassword = false;
 
   home-manager = {
