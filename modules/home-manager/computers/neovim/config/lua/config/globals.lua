@@ -15,6 +15,8 @@ vim.o.foldmethod = "expr"
 vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldenable = true
 
+vim.o.shell = "zsh"
+
 -- Start with everything unfolded
-vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 99
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
