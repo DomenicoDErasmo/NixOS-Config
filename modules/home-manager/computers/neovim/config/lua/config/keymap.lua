@@ -35,24 +35,8 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show LSP D
 vim.keymap.set("n", "]d", function()
   vim.diagnostic.jump({ count = 1, float = true })
 end, { desc = "Next Diagnostic" })
-vim.keymap.set("n", "[d", function() 
-  vim.diagnostic.jump({count = -1, float = true})
+vim.keymap.set("n", "[d", function()
+  vim.diagnostic.jump({ count = -1, float = true })
 end, { desc = "Previous Diagnostic" })
 
--- Create a fold keymap group
-local opts = { noremap = true, silent = true }
-
--- Toggle fold under cursor
-vim.api.nvim_set_keymap("n", "<leader>z", "za", opts)
-
--- Open fold under cursor
-vim.api.nvim_set_keymap("n", "<leader>o", "zo", opts)
-
--- Close fold under cursor
-vim.api.nvim_set_keymap("n", "<leader>c", "zc", opts)
-
--- Open all folds in buffer
-vim.api.nvim_set_keymap("n", "<leader>O", "zR", opts)
-
--- Close all folds in buffer
-vim.api.nvim_set_keymap("n", "<leader>C", "zM", opts)
+vim.keymap.set("n", "<leader>o", "<cmd>Oil<CR>", { noremap = true, silent = true })
