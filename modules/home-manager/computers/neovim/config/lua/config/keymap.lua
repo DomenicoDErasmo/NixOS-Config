@@ -39,4 +39,6 @@ vim.keymap.set("n", "[d", function()
   vim.diagnostic.jump({ count = -1, float = true })
 end, { desc = "Previous Diagnostic" })
 
-vim.keymap.set("n", "<leader>o", "<cmd>Oil<CR>", { noremap = true, silent = true })
+local opts = { noremap = true, silent = true }
+
+vim.keymap.set("n", "<leader>o", "<cmd>Oil<CR>", opts)
