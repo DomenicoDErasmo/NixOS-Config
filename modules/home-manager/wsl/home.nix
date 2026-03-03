@@ -14,57 +14,11 @@
   home.stateVersion = "25.11"; # Please read the comment before changing.
 
   imports = [
-    ../computers/git.nix
-    ../computers/neovim/neovim.nix
-    ../computers/zsh/zsh.nix
+    ../common/git.nix
+    ../common/neovim/neovim.nix
+    ../common/zsh/zsh.nix
+    ../common/common_programs.nix
   ];
-
-  home.packages = with pkgs; [
-    # Nix Formatter
-    alejandra
-
-    # Bash LSP
-    bash-language-server
-
-    # For dev shells
-    direnv
-    devenv
-
-    # Performance measuring
-    hyperfine
-
-    # JSON parsing
-    jq
-
-    # Markdown Linting
-    markdownlint-cli
-
-    # Markdown LSP
-    marksman
-
-    # Nix LSP
-    nixd
-
-    # View system details
-    neofetch
-
-    # Code formatter (like Markdown)
-    prettier
-
-    # Better grep
-    ripgrep
-
-    # CSS LSP
-    vscode-css-languageserver
-
-    # Wikipedia TUI
-    wiki-tui
-  ];
-
-  # For certain Electron apps like 1password
-  home.sessionVariables = {
-    GTK_THEME = "Adwaita:dark";
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
