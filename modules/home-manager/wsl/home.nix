@@ -48,6 +48,9 @@
     # View system details
     neofetch
 
+    # Code formatter (like Markdown)
+    prettier
+
     # Better grep
     ripgrep
 
