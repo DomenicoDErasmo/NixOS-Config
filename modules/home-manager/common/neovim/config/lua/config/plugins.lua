@@ -19,6 +19,4 @@ vim.pack.add({
   { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
   -- Obsidian support in Neovim
   { src = "https://github.com/epwalsh/obsidian.nvim" },
-  -- Floating previews
-  { src = "https://github.com/toppair/peek.nvim" },
 })

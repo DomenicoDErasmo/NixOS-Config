@@ -16,4 +16,13 @@ require("obsidian").setup({
       opts = { buffer = true },
     },
   },
+
+  workspaces = {
+    {
+      name = "notes",
+      path = "~/notes/",
+    },
+  },
 })
+
+vim.o.conceallevel = 2
