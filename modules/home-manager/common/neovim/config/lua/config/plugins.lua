@@ -18,5 +18,5 @@ vim.pack.add({
   { src = "https://github.com/nvim-mini/mini.nvim" },
   { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
   -- Obsidian support in Neovim
-  { src = "https://github.com/epwalsh/obsidian.nvim" },
+  { src = "https://github.com/obsidian-nvim/obsidian.nvim" },
 })

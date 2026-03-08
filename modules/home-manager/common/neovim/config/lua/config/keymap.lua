@@ -42,3 +42,60 @@ end, { desc = "Previous Diagnostic" })
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<leader>o", "<cmd>Oil<CR>", opts)
+
+vim.keymap.set("n", "<leader>fp", function()
+  -- Extract path from markdown link [text](path) or plain path under cursor
+  local line = vim.api.nvim_get_current_line()
+  local col = vim.api.nvim_win_get_cursor(0)[2] + 1
+
+  -- Try to find a markdown link [.*](path) near the cursor
+  local path = nil
+  for link_path in line:gmatch("%[.-%]%((.-)%)") do
+    path = link_path
+    break
+  end
+
+  -- Fallback to word under cursor
+  if not path then
+    path = vim.fn.expand("<cfile>")
+  end
+
+  -- Resolve relative to the current file's directory (not cwd)
+  if not path:match("^/") then
+    local current_dir = vim.fn.expand("%:p:h")
+    path = current_dir .. "/" .. path
+  end
+
+  -- Normalize the path (resolves ../ and duplicate segments)
+  path = vim.fn.simplify(path)
+
+  if vim.fn.filereadable(path) == 0 then
+    vim.notify("Cannot read file: " .. path, vim.log.levels.ERROR)
+    return
+  end
+
+  local buf = vim.api.nvim_create_buf(false, true)
+  local lines = vim.fn.readfile(path)
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+
+  -- Set filetype for syntax highlighting
+  local ext = path:match("%.(%w+)$")
+  if ext then
+    vim.bo[buf].filetype = ext
+  end
+
+  local width = math.floor(vim.o.columns * 0.7)
+  local height = math.floor(vim.o.lines * 0.7)
+  vim.api.nvim_open_win(buf, true, {
+    relative = "editor",
+    width = width,
+    height = height,
+    col = math.floor((vim.o.columns - width) / 2),
+    row = math.floor((vim.o.lines - height) / 2),
+    style = "minimal",
+    border = "rounded",
+  })
+
+  -- Close the float with q
+  vim.keymap.set("n", "q", "<cmd>close<CR>", { buffer = buf, silent = true })
+end)
