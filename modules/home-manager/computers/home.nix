@@ -17,7 +17,7 @@
     ../common/git.nix
     ../common/neovim/neovim.nix
     ../common/zsh/zsh.nix
-    ../common/common_programs.nix
+    ../common/settings.nix
     ./brave.nix
     ./ghostty/ghostty.nix
     ./hyprland.nix
@@ -69,7 +69,4 @@
     # For more dark themes
     GTK_THEME = "Adwaita:dark";
   };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }

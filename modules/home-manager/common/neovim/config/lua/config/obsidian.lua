@@ -24,7 +24,7 @@ require("obsidian").setup({
     },
   },
 
-  ui = { enabled = false },
+  ui = { enable = false },
 })
 
 vim.o.conceallevel = 2

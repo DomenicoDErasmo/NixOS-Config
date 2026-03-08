@@ -14,3 +14,5 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.lsp.start(vim.lsp.config["cpp"])
   end,
 })
+
+vim.api.nvim_set_hl(0, "@lsp.type.operator.cpp", { link = "@keyword" })

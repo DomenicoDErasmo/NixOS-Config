@@ -17,9 +17,6 @@
     ../common/git.nix
     ../common/neovim/neovim.nix
     ../common/zsh/zsh.nix
-    ../common/common_programs.nix
+    ../common/settings.nix
   ];
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }
