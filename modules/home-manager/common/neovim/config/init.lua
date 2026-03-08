@@ -11,6 +11,7 @@ require("config.telescope")
 require("config.oil")
 require("config.toggleterm")
 require("config.rainbow_delimiters")
+require("config.render_markdown")
 require("config.perfanno")
 
 require("config.debugger.plugins")
