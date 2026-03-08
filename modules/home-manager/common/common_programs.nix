@@ -10,6 +10,9 @@
     direnv
     devenv
 
+    # better find
+    fd
+
     # Performance measuring
     hyperfine
 

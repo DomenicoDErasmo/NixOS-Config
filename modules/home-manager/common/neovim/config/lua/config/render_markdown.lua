@@ -7,4 +7,7 @@ require("render-markdown").setup({
     highlight = "RenderMarkdownCode",
     highlight_inline = "RenderMarkdownCodeInline",
   },
+  html = { enabled = false },
+  latex = { enabled = false },
+  yaml = { enabled = false },
 })

@@ -7,6 +7,7 @@ if not ok then
   treesitter = require("nvim-treesitter.configs")
 end
 
+---@diagnostic disable-next-line
 treesitter.setup({
   ensure_installed = { "lua", "rust", "cpp", "python", "css", "cmake", "markdown", "nix", "bash" },
   highlight = {

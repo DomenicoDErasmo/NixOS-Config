@@ -23,6 +23,8 @@ require("obsidian").setup({
       path = "~/notes/",
     },
   },
+
+  ui = { enabled = false },
 })
 
 vim.o.conceallevel = 2
