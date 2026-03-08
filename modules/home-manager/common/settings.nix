@@ -6,12 +6,18 @@
     # Bash LSP
     bash-language-server
 
+    # Better cat
+    bat
+
     # For dev shells
     direnv
     devenv
 
-    # better find
+    # Better find
     fd
+
+    # Better LS
+    eza
 
     # Performance measuring
     hyperfine

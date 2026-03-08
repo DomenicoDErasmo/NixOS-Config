@@ -11,6 +11,11 @@
     syntaxHighlighting.enable = true;
     shellAliases = {
       c = "clear";
+      cat = "bat";
+      grep = "rg";
+      g = "rg";
+      ls = "exa";
+      find = "fd";
     };
     plugins = [
       {
@@ -19,6 +24,14 @@
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
       }
     ];
+    history = {
+      append = true;
+      share = true;
+      findNoDups = true;
+      expireDuplicatesFirst = true;
+      extended = true;
+      size = 10000;
+    };
   };
 
   programs.fzf = {
