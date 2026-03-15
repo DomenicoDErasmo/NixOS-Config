@@ -113,3 +113,11 @@ vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" }
 
 -- Close tab
 vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { desc = "Close tab" })
+
+-- Apply fix if available
+vim.keymap.set(
+  "n",
+  "<leader>ca",
+  vim.lsp.buf.code_action,
+  { noremap = true, silent = true, desc = "LSP: Code Action / Apply Fix" }
+)

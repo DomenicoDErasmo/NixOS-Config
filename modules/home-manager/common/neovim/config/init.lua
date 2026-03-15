@@ -14,7 +14,6 @@ require("config.rainbow_delimiters")
 require("config.render_markdown")
 require("config.perfanno")
 require("config.indent_blankline")
-require("config.bufferline")
 require("config.flash")
 
 require("config.debugger.dap")

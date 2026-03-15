@@ -73,6 +73,4 @@ vim.pack.add({
   { src = "https://github.com/MagicDuck/grug-far.nvim" },
   -- Quick fix filter/preview
   { src = "https://github.com/kevinhwang91/nvim-bqf" },
-  -- Buffer visual tab
-  { src = "https://github.com/akinsho/bufferline.nvim" },
 })
