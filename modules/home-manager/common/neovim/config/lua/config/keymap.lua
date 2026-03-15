@@ -1,3 +1,7 @@
+local function with_desc(opts, extra)
+  return vim.tbl_extend("force", opts, { desc = extra })
+end
+
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local buf = args.buf
@@ -6,17 +10,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- Go to definition
     -- Related, jump lists:
     -- Ctrl+o to jump back and Ctrl-i to jump forward
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, with_desc(opts, "Go-to definition"))
     -- Hover documentation
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, with_desc(opts, "Hover documentation"))
     -- References
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, with_desc(opts, "View references"))
     -- Type definition
-    vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, opts)
+    vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, with_desc(opts, "View type definition"))
     -- Rename symbol
-    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, with_desc(opts, "Rename symbol"))
     -- Signature help (in insert mode)
-    vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, opts)
+    vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, with_desc(opts, "Signature help"))
     -- Apply code fix (if available)
     vim.keymap.set("n", "gf", function()
       local diagnostics = vim.diagnostic.get(0)
@@ -24,7 +28,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
         apply = true,
         context = { only = { "quickfix", "source.fixAll" }, diagnostics = diagnostics },
       })
-    end, opts)
+    end, with_desc(opts, "Apply code fix (if available"))
   end,
 })
 
@@ -43,8 +47,8 @@ local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<leader>o", "<cmd>Oil<CR>", opts)
 
+-- Extract path from markdown link [text](path) or plain path under cursor
 vim.keymap.set("n", "<leader>fp", function()
-  -- Extract path from markdown link [text](path) or plain path under cursor
   local line = vim.api.nvim_get_current_line()
 
   -- Try to find a markdown link [.*](path) near the cursor
@@ -96,5 +100,13 @@ vim.keymap.set("n", "<leader>fp", function()
   })
 
   -- Close the float with q
-  vim.keymap.set("n", "q", "<cmd>close<CR>", { buffer = buf, silent = true })
+  vim.keymap.set(
+    "n",
+    "q",
+    "<cmd>close<CR>",
+    { buffer = buf, silent = true, desc = "Extract preview from markdown link" }
+  )
 end)
+
+-- Open Neogit UI
+vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })

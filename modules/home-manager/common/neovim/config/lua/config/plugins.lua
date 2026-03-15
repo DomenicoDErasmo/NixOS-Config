@@ -6,6 +6,8 @@ vim.pack.add({
   { src = "https://github.com/nvimtools/none-ls.nvim" },
   -- telescope - customizable fuzzy finder
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
+  -- Faster fzf
+  { src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
   -- dev icons
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   -- git signs
@@ -40,6 +42,8 @@ vim.pack.add({
   { src = "https://github.com/akinsho/toggleterm.nvim" },
   -- Treesitter
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+  -- Extra motions for functions, classes, etc.
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
   -- Diff views
   { src = "https://github.com/sindrets/diffview.nvim" },
   -- Debugging
@@ -49,4 +53,26 @@ vim.pack.add({
   { src = "https://github.com/theHamsta/nvim-dap-virtual-text" },
   { src = "https://github.com/nvim-telescope/telescope-dap.nvim" },
   { src = "https://github.com/Weissle/persistent-breakpoints.nvim" },
+  -- Git UI
+  { src = "https://github.com/NeogitOrg/neogit" },
+  -- Show available keybinds
+  { src = "https://github.com/folke/which-key.nvim" },
+  -- Indenting guides
+  { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
+  -- Highlight other uses of the word under the cursor
+  { src = "https://github.com/RRethy/vim-illuminate" },
+  -- Autopairs
+  { src = "https://github.com/windwp/nvim-autopairs" },
+  -- Change surrounding brackets
+  { src = "https://github.com/kylechui/nvim-surround" },
+  -- Label-based jumping
+  { src = "https://github.com/folke/flash.nvim" },
+  -- Commenting motions
+  { src = "https://github.com/numToStr/Comment.nvim" },
+  -- Better search/replace
+  { src = "https://github.com/MagicDuck/grug-far.nvim" },
+  -- Quick fix filter/preview
+  { src = "https://github.com/kevinhwang91/nvim-bqf" },
+  -- Buffer visual tab
+  { src = "https://github.com/akinsho/bufferline.nvim" },
 })
