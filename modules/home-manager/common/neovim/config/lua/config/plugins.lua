@@ -19,4 +19,25 @@ vim.pack.add({
   { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
   -- Obsidian support in Neovim
   { src = "https://github.com/obsidian-nvim/obsidian.nvim" },
+  -- autocomplete
+  { src = "https://github.com/hrsh7th/nvim-cmp" },
+  { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
+  { src = "https://github.com/hrsh7th/cmp-buffer" },
+  { src = "https://github.com/hrsh7th/cmp-path" },
+  -- VSCode color scheme
+  { src = "https://github.com/Mofiqul/vscode.nvim" },
+  -- File Browser
+  { src = "https://github.com/stevearc/oil.nvim" },
+  -- Git status in file browser
+  { src = "https://github.com/benomahony/oil-git.nvim" },
+  -- Show LSP diagnoostic errors
+  { src = "https://github.com/JezerM/oil-lsp-diagnostics.nvim" },
+  -- Performance tool
+  { src = "https://github.com/t-troebst/perfanno.nvim" },
+  -- Rainbow delimiters
+  { src = "https://github.com/HiPhish/rainbow-delimiters.nvim" },
+  -- persistent terminals
+  { src = "https://github.com/akinsho/toggleterm.nvim" },
+  -- Treesitter
+  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
 })

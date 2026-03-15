@@ -1,7 +1,3 @@
-vim.pack.add({
-  { src = "https://github.com/Mofiqul/vscode.nvim" },
-})
-
 local c = require("vscode.colors").get_colors()
 require("vscode").setup({
   -- Enable transparent background

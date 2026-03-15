@@ -1,7 +1,3 @@
-vim.pack.add({
-  { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
-})
-
 ---@diagnostic disable-next-line
 require("nvim-treesitter.config").setup({
   highlight = {

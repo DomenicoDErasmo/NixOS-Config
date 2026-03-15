@@ -1,7 +1,3 @@
-vim.pack.add({
-  { src = "https://github.com/t-troebst/perfanno.nvim" },
-})
-
 local perfanno = require("perfanno")
 local util = require("perfanno.util")
 
