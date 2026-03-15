@@ -73,4 +73,9 @@ vim.pack.add({
   { src = "https://github.com/MagicDuck/grug-far.nvim" },
   -- Quick fix filter/preview
   { src = "https://github.com/kevinhwang91/nvim-bqf" },
+  -- CMP signature help
+  { src = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help" },
+  -- Snippet engine
+  { src = "https://github.com/L3MON4D3/LuaSnip" },
+  { src = "https://github.com/saadparwaiz1/cmp_luasnip" },
 })

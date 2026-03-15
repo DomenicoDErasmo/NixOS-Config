@@ -5,7 +5,9 @@ vim.lsp.config["cpp"] = {
     "--clang-tidy",
     "--header-insertion=iwyu",
     "--compile-commands-dir=" .. vim.loop.cwd(),
+    "--completion-style=detailed",
   },
+  capabilities = require("cmp_nvim_lsp").default_capabilities(),
 }
 
 vim.api.nvim_create_autocmd("FileType", {
