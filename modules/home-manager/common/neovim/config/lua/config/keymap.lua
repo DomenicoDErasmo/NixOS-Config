@@ -110,3 +110,6 @@ end)
 
 -- Open Neogit UI
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })
+
+-- Close tab
+vim.keymap.set("n", "<leader>tc", ":tabclose<CR>", { desc = "Close tab" })
