@@ -41,7 +41,7 @@ vim.pack.add({
   -- Treesitter
   { src = "https://github.com/nvim-treesitter/nvim-treesitter" },
   -- Diff views
-  { src = "sindrets/diffview.nvim" },
+  { src = "https://github.com/sindrets/diffview.nvim" },
   -- Debugging
   { src = "https://github.com/mfussenegger/nvim-dap" },
   { src = "https://github.com/nvim-neotest/nvim-nio" },
