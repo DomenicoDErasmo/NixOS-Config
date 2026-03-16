@@ -1,1 +1,1 @@
-require("flash").treesitter({})
+require("flash").setup({})
