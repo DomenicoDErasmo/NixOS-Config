@@ -106,7 +106,7 @@ vim.keymap.set("n", "<leader>fp", function()
     "<cmd>close<CR>",
     { buffer = buf, silent = true, desc = "Extract preview from markdown link" }
   )
-end)
+end, { desc = "Open preview of link" })
 
 -- Open Neogit UI
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })
