@@ -28,24 +28,22 @@ vim.pack.add({
 	-- File Browser
 	{ src = "https://github.com/stevearc/oil.nvim" },
 	-- Git status in file browser
-	{ src = "https://github.com/benomahony/oil-git.nvim" },
+	{ src = "https://github.com/benomahony/oil-git.nvim", deps = { "stevearc/oil.nvim" } },
 	-- Show LSP diagnostic errors
-	{ src = "https://github.com/JezerM/oil-lsp-diagnostics.nvim" },
+	{ src = "https://github.com/JezerM/oil-lsp-diagnostics.nvim", deps = { "stevearc/oil.nvim" } },
 	-- Performance tool
-	{ src = "https://github.com/t-troebst/perfanno.nvim" },
+	{ src = "https://github.com/t-troebst/perfanno.nvim", deps = { "nvim-telescope/telescope.nvim" } },
 	-- Rainbow delimiters
 	{ src = "https://github.com/HiPhish/rainbow-delimiters.nvim" },
 	-- persistent terminals
 	{ src = "https://github.com/akinsho/toggleterm.nvim" },
 	-- NOTE: nvim-treesitter managed by Nix (with parsers)
-	-- Extra motions for functions, classes, etc.
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects" },
 	-- Diff views
 	{ src = "https://github.com/sindrets/diffview.nvim" },
 	-- Debugging
 	{ src = "https://github.com/mfussenegger/nvim-dap" },
 	{ src = "https://github.com/nvim-neotest/nvim-nio" },
-	{ src = "https://github.com/rcarriga/nvim-dap-ui" },
+	{ src = "https://github.com/rcarriga/nvim-dap-ui", deps = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
 	{ src = "https://github.com/theHamsta/nvim-dap-virtual-text" },
 	{ src = "https://github.com/nvim-telescope/telescope-dap.nvim" },
 	{ src = "https://github.com/Weissle/persistent-breakpoints.nvim" },
@@ -59,10 +57,4 @@ vim.pack.add({
 	{ src = "https://github.com/RRethy/vim-illuminate" },
 	-- Autopairs
 	{ src = "https://github.com/windwp/nvim-autopairs" },
-	-- Better search/replace
-	{ src = "https://github.com/MagicDuck/grug-far.nvim" },
-	-- Quick fix filter/preview
-	{ src = "https://github.com/kevinhwang91/nvim-bqf" },
-	-- Snippet engine
-	{ src = "https://github.com/L3MON4D3/LuaSnip" },
 })
