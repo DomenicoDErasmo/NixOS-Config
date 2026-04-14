@@ -17,6 +17,7 @@ require("config.render_markdown")
 require("config.perfanno")
 require("config.indent_blankline")
 require("config.todo_comments")
+require("config.nvim_autopairs")
 
 require("config.debugger.dap")
 require("config.debugger.dap-ui")

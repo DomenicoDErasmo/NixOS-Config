@@ -17,7 +17,7 @@ vim.pack.add({
 	-- status bar
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 	-- TODO highlighting
-	{ src = "https://github.com/folke/todo-comments.nvim" },
+	{ src = "https://github.com/folke/todo-comments.nvim", deps = {"plenary.nvim" } },
 	-- Markdown rendering
 	{ src = "https://github.com/nvim-mini/mini.nvim" },
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
