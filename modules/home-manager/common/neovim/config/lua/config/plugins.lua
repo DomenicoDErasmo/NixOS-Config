@@ -63,4 +63,6 @@ vim.pack.add({
 	{ src = "https://github.com/folke/trouble.nvim" },
 	-- Telescope as UI
 	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
+	-- Plugins inline
+	{ src = "https://github.com/rachartier/tiny-inline-diagnostic.nvim" },
 })
