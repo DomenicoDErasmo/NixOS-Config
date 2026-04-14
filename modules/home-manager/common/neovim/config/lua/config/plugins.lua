@@ -15,11 +15,10 @@ vim.pack.add({
 	-- git signs
 	{ src = "https://github.com/lewis6991/gitsigns.nvim" },
 	-- status bar
-	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
+	{ src = "https://github.com/nvim-lualine/lualine.nvim", deps = { "nvim-tree/nvim-web-devicons" } },
 	-- TODO highlighting
 	{ src = "https://github.com/folke/todo-comments.nvim", deps = { "plenary.nvim" } },
 	-- Markdown rendering
-	{ src = "https://github.com/nvim-mini/mini.nvim" },
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
 	-- Obsidian support in Neovim
 	{ src = "https://github.com/obsidian-nvim/obsidian.nvim" },
