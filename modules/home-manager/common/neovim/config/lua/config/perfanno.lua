@@ -9,19 +9,19 @@ perfanno.setup({
 
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set("n", "<LEADER>plf", ":PerfLoadFlat<CR>", opts)
-vim.keymap.set("n", "<LEADER>plg", ":PerfLoadCallGraph<CR>", opts)
-vim.keymap.set("n", "<LEADER>plo", ":PerfLoadFlameGraph<CR>", opts)
+vim.keymap.set("n", "<leader>plf", ":PerfLoadFlat<CR>", opts)
+vim.keymap.set("n", "<leader>plg", ":PerfLoadCallGraph<CR>", opts)
+vim.keymap.set("n", "<leader>plo", ":PerfLoadFlameGraph<CR>", opts)
 
-vim.keymap.set("n", "<LEADER>pe", ":PerfPickEvent<CR>", opts)
+vim.keymap.set("n", "<leader>pe", ":PerfPickEvent<CR>", opts)
 
-vim.keymap.set("n", "<LEADER>pa", ":PerfAnnotate<CR>", opts)
-vim.keymap.set("n", "<LEADER>pf", ":PerfAnnotateFunction<CR>", opts)
-vim.keymap.set("v", "<LEADER>pa", ":PerfAnnotateSelection<CR>", opts)
+vim.keymap.set("n", "<leader>pa", ":PerfAnnotate<CR>", opts)
+vim.keymap.set("n", "<leader>pf", ":PerfAnnotateFunction<CR>", opts)
+vim.keymap.set("v", "<leader>pa", ":PerfAnnotateSelection<CR>", opts)
 
-vim.keymap.set("n", "<LEADER>pt", ":PerfToggleAnnotations<CR>", opts)
+vim.keymap.set("n", "<leader>pt", ":PerfToggleAnnotations<CR>", opts)
 
-vim.keymap.set("n", "<LEADER>ph", ":PerfHottestLines<CR>", opts)
-vim.keymap.set("n", "<LEADER>ps", ":PerfHottestSymbols<CR>", opts)
-vim.keymap.set("n", "<LEADER>pc", ":PerfHottestCallersFunction<CR>", opts)
-vim.keymap.set("v", "<LEADER>pc", ":PerfHottestCallersSelection<CR>", opts)
+vim.keymap.set("n", "<leader>ph", ":PerfHottestLines<CR>", opts)
+vim.keymap.set("n", "<leader>ps", ":PerfHottestSymbols<CR>", opts)
+vim.keymap.set("n", "<leader>pc", ":PerfHottestCallersFunction<CR>", opts)
+vim.keymap.set("v", "<leader>pc", ":PerfHottestCallersSelection<CR>", opts)

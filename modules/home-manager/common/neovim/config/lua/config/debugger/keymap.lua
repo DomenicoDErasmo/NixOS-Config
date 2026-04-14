@@ -1,7 +1,7 @@
 vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "", linehl = "", numhl = "" })
 vim.keymap.set("n", "<F5>", function()
   require("dap").continue()
-end)
+end, { desc = "Debugger: continue" })
 vim.keymap.set("n", "<F10>", function()
   require("dap").step_over()
 end, { desc = "Debugger: step over" })

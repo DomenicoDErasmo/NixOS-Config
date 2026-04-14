@@ -7,7 +7,7 @@ vim.lsp.config["cpp"] = {
     "--compile-commands-dir=" .. vim.fn.getcwd(),
     "--completion-style=detailed",
   },
-  capabilities = require("blink.cmp").get_lsp_capabilities(),
+  -- NOTE: capabilities set globally in blink.lua
 }
 
 vim.api.nvim_create_autocmd("FileType", {
