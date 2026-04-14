@@ -9,6 +9,9 @@
     # Better cat
     bat
 
+    # Claude Code
+    claude-code
+
     # For dev shells
     direnv
     devenv
