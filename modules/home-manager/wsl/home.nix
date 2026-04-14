@@ -16,6 +16,7 @@
   imports = [
     ../common/git.nix
     ../common/neovim/neovim.nix
+    ../common/tmux.nix
     ../common/zsh/zsh.nix
     ../common/settings.nix
   ];
