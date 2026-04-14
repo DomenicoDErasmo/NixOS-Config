@@ -9,8 +9,7 @@ vim.pack.add({
   { src = "https://github.com/stevearc/conform.nvim" },
   -- telescope - customizable fuzzy finder
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
-  -- Faster fzf
-  { src = "https://github.com/nvim-telescope/telescope-fzf-native.nvim" },
+  -- NOTE: telescope-fzf-native managed by Nix (pre-compiled)
   -- dev icons
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   -- git signs
@@ -24,8 +23,7 @@ vim.pack.add({
   { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
   -- Obsidian support in Neovim
   { src = "https://github.com/obsidian-nvim/obsidian.nvim" },
-  -- autocomplete
-  { src = "https://github.com/saghen/blink.cmp" },
+  -- NOTE: blink.cmp managed by Nix (pre-compiled)
   -- VSCode color scheme
   { src = "https://github.com/Mofiqul/vscode.nvim" },
   -- File Browser

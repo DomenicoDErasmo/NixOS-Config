@@ -35,6 +35,9 @@
           bash
           c
         ]))
+      # Pre-compiled plugins (require native compilation)
+      telescope-fzf-native-nvim
+      blink-cmp
     ];
   };
   home.file.".config/nvim/init.lua".source = ./config/init.lua;
