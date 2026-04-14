@@ -1,9 +1,12 @@
 vim.pack.add({
   -- LSP config
   { src = "https://github.com/neovim/nvim-lspconfig" },
-  -- required by none-ls
+  -- required by various plugins
   { src = "https://github.com/nvim-lua/plenary.nvim" },
-  { src = "https://github.com/nvimtools/none-ls.nvim" },
+  -- Linting
+  { src = "https://github.com/mfussenegger/nvim-lint" },
+  -- Formatting
+  { src = "https://github.com/stevearc/conform.nvim" },
   -- telescope - customizable fuzzy finder
   { src = "https://github.com/nvim-telescope/telescope.nvim" },
   -- Faster fzf
@@ -22,10 +25,7 @@ vim.pack.add({
   -- Obsidian support in Neovim
   { src = "https://github.com/obsidian-nvim/obsidian.nvim" },
   -- autocomplete
-  { src = "https://github.com/hrsh7th/nvim-cmp" },
-  { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
-  { src = "https://github.com/hrsh7th/cmp-buffer" },
-  { src = "https://github.com/hrsh7th/cmp-path" },
+  { src = "https://github.com/saghen/blink.cmp" },
   -- VSCode color scheme
   { src = "https://github.com/Mofiqul/vscode.nvim" },
   -- File Browser
@@ -65,17 +65,12 @@ vim.pack.add({
   { src = "https://github.com/windwp/nvim-autopairs" },
   -- Change surrounding brackets
   { src = "https://github.com/kylechui/nvim-surround" },
-  -- Label-based jumping
-  { src = "https://github.com/folke/flash.nvim" },
   -- Commenting motions
   { src = "https://github.com/numToStr/Comment.nvim" },
   -- Better search/replace
   { src = "https://github.com/MagicDuck/grug-far.nvim" },
   -- Quick fix filter/preview
   { src = "https://github.com/kevinhwang91/nvim-bqf" },
-  -- CMP signature help
-  { src = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help" },
   -- Snippet engine
   { src = "https://github.com/L3MON4D3/LuaSnip" },
-  { src = "https://github.com/saadparwaiz1/cmp_luasnip" },
 })

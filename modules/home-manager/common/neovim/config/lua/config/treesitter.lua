@@ -1,5 +1,17 @@
 ---@diagnostic disable-next-line
 require("nvim-treesitter.config").setup({
+  ensure_installed = {
+    "bash",
+    "cmake",
+    "cpp",
+    "css",
+    "html",
+    "lua",
+    "markdown",
+    "nix",
+    "python",
+    "rust",
+  },
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,

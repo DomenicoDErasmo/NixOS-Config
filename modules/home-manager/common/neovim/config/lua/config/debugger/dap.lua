@@ -67,4 +67,4 @@ local function pick_executable()
 end
 
 -- Map a key to pick + launch executable
-vim.keymap.set("n", "<Leader>db", pick_executable, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>db", pick_executable, { noremap = true, silent = true })
