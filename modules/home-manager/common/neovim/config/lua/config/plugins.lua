@@ -59,4 +59,8 @@ vim.pack.add({
 	{ src = "https://github.com/windwp/nvim-autopairs" },
 	-- Notification manager
 	{ src = "https://github.com/rcarriga/nvim-notify" },
+	-- List diagnostics
+	{ src = "https://github.com/folke/trouble.nvim" },
+	-- Telescope as UI
+	{ src = "https://github.com/nvim-telescope/telescope-ui-select.nvim" },
 })

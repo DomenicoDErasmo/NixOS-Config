@@ -13,8 +13,9 @@ vim.lsp.config["lua_ls"] = {
 }
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "lua",
-  callback = function()
-    vim.lsp.start(vim.lsp.config["lua_ls"])
-  end,
+	pattern = "lua",
+	callback = function()
+		vim.lsp.start(vim.lsp.config["lua_ls"])
+	end,
 })
+
