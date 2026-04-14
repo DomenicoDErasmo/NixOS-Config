@@ -57,4 +57,6 @@ vim.pack.add({
 	{ src = "https://github.com/RRethy/vim-illuminate" },
 	-- Autopairs
 	{ src = "https://github.com/windwp/nvim-autopairs" },
+	-- Notification manager
+	{ src = "https://github.com/rcarriga/nvim-notify" },
 })
