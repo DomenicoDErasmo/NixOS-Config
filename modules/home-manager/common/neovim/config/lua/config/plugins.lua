@@ -17,7 +17,7 @@ vim.pack.add({
 	-- status bar
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
 	-- TODO highlighting
-	{ src = "https://github.com/folke/todo-comments.nvim", deps = {"plenary.nvim" } },
+	{ src = "https://github.com/folke/todo-comments.nvim", deps = { "plenary.nvim" } },
 	-- Markdown rendering
 	{ src = "https://github.com/nvim-mini/mini.nvim" },
 	{ src = "https://github.com/MeanderingProgrammer/render-markdown.nvim" },
@@ -60,10 +60,6 @@ vim.pack.add({
 	{ src = "https://github.com/RRethy/vim-illuminate" },
 	-- Autopairs
 	{ src = "https://github.com/windwp/nvim-autopairs" },
-	-- Change surrounding brackets
-	{ src = "https://github.com/kylechui/nvim-surround" },
-	-- Commenting motions
-	{ src = "https://github.com/numToStr/Comment.nvim" },
 	-- Better search/replace
 	{ src = "https://github.com/MagicDuck/grug-far.nvim" },
 	-- Quick fix filter/preview
