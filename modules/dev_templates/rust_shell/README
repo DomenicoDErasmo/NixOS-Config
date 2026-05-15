@@ -1,4 +1,0 @@
-# Rust Shell README
-
-Copy `devenv.nix` to your project root
-Run `devenv shell`
