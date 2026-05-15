@@ -1,0 +1,7 @@
+/home/domenico/NixOS-Config/modules/dev_templates/rust_shell/.devenv/flake.json
+/home/domenico/NixOS-Config/modules/dev_templates/rust_shell/.devenv.flake.nix
+/home/domenico/NixOS-Config/modules/dev_templates/rust_shell/.env
+/home/domenico/NixOS-Config/modules/dev_templates/rust_shell/devenv.local.nix
+/home/domenico/NixOS-Config/modules/dev_templates/rust_shell/devenv.lock
+/home/domenico/NixOS-Config/modules/dev_templates/rust_shell/devenv.nix
+/home/domenico/NixOS-Config/modules/dev_templates/rust_shell/devenv.yaml
