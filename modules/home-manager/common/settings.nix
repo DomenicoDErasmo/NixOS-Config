@@ -12,10 +12,6 @@
     # Claude Code
     claude-code
 
-    # For dev shells
-    direnv
-    devenv
-
     # Better find
     fd
 
