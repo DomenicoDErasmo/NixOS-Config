@@ -81,7 +81,16 @@ in {
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # For dynamic linkers, such as running VS Code
-  programs.nix-ld.enable = true;
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc.lib
+      zlib
+      openssl
+      curl
+      libgcc
+    ];
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

@@ -37,6 +37,12 @@
 
   programs.zsh.enable = true;
 
+  # direnv for automatic dev shell loading
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   users.users.domenico = {
     isNormalUser = true;
     uid = 1000;
@@ -60,6 +66,18 @@
 
   # Allow flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  # For dynamic linkers, such as running VS Code
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc.lib
+      zlib
+      openssl
+      curl
+      libgcc
+    ];
+  };
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
