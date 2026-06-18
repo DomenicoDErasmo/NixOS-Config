@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  home.sessionPath = [
+    "$HOME/.cargo/bin"
+  ];
+
   home.packages = [
     pkgs.zsh
     pkgs.zsh-powerlevel10k
