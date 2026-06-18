@@ -41,9 +41,6 @@
 
         shellHook = ''
               export RUST_SRC_PATH="${toolchain}/lib/rustlib/src/rust/library"
-          if [ -z "$ZSH_VERSION" ]; then
-            exec zsh
-          fi
         '';
       };
     });
