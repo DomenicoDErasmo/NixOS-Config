@@ -12,6 +12,9 @@
     # Claude Code
     claude-code
 
+    # CLI for codecrafters projects
+    codecrafters-cli
+
     # Better find
     fd
 
