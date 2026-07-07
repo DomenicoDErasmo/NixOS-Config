@@ -449,6 +449,22 @@
         "type": "github"
       }
     },
+    "neovim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1783386774,
+        "narHash": "sha256-+LfIvQO89dkH5Xgd7+M984z5BtiuZMmHemI2Hph20T4=",
+        "owner": "DomenicoDErasmo",
+        "repo": "Neovim-Config",
+        "rev": "8a647fe6aa49be5810db35cf53cbb2337911ae46",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DomenicoDErasmo",
+        "repo": "Neovim-Config",
+        "type": "github"
+      }
+    },
     "neovim-src": {
       "flake": false,
       "locked": {
@@ -551,6 +567,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "hyprland": "hyprland",
+        "neovim-config": "neovim-config",
         "neovimNightlyOverlay": "neovimNightlyOverlay",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs"

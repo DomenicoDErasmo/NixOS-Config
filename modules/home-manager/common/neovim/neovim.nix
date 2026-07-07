@@ -41,6 +41,6 @@
       blink-cmp
     ];
   };
-  home.file.".config/nvim/init.lua".source = ./config/init.lua;
-  home.file.".config/nvim/lua".source = ./config/lua;
+  home.file.".config/nvim/init.lua".source = "${inputs.neovim-config}/init.lua";
+  home.file.".config/nvim/lua".source = "${inputs.neovim-config}/lua";
 }
