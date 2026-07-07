@@ -9,17 +9,26 @@
     # Better cat
     bat
 
+    # Rust installer for certain dependencies
+    cargo
+
     # Claude Code
     claude-code
 
     # CLI for codecrafters projects
     codecrafters-cli
 
+    # Better LS
+    eza
+
     # Better find
     fd
 
-    # Better LS
-    eza
+    # Fuzzy find
+    fzf
+
+    # Make dependencies
+    gnumake
 
     # Performance measuring
     hyperfine

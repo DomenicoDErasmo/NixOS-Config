@@ -14,6 +14,8 @@
     pkgs.rustfmt
     # Python language server
     pkgs.pyright
+    # C compiler (for building native Neovim plugins like telescope-fzf-native)
+    pkgs.gcc
   ];
 
   programs.neovim = {
@@ -36,10 +38,9 @@
           c
         ]))
       # Pre-compiled plugins (require native compilation)
-      telescope-fzf-native-nvim
       blink-cmp
     ];
   };
-  home.file.".config/nvim/init.lua".source = ./config/init.lua;
-  home.file.".config/nvim/lua".source = ./config/lua;
+  home.file.".config/nvim/init.lua".source = ./init.lua;
+  home.file.".config/nvim/lua".source = ./lua;
 }
