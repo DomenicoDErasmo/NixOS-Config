@@ -20,6 +20,9 @@
 
     # Better LS
     eza
+    
+    # View system details
+    fastfetch
 
     # Better find
     fd
@@ -44,9 +47,6 @@
 
     # Nix LSP
     nixd
-
-    # View system details
-    neofetch
 
     # Code formatter (like Markdown)
     prettier
