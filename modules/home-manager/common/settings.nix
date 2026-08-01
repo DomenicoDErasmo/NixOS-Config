@@ -40,7 +40,7 @@
     jq
 
     # Markdown Linting
-    markdownlint-cli
+    markdownlint-cli2
 
     # Markdown LSP
     marksman
