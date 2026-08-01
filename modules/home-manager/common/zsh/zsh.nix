@@ -20,6 +20,7 @@
       g = "rg";
       ls = "exa";
       find = "fd";
+      notes = "cd ~/notes/; nvim .";
     };
     plugins = [
       {
