@@ -18,6 +18,9 @@
     # CLI for codecrafters projects
     codecrafters-cli
 
+    # Terminal Bonsai ASCII Art
+    cbonsai 
+
     # Better LS
     eza
     
