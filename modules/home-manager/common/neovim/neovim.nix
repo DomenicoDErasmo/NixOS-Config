@@ -12,8 +12,11 @@
     pkgs.lua-language-server
     # Rustfmt
     pkgs.rustfmt
-    # Python language server
-    pkgs.pyright
+    # Python type checker / LSP (global fallback; project devShells take
+    # priority on PATH when present)
+    pkgs.ty
+    # Python linter/formatter (same fallback role as ty above)
+    pkgs.ruff
     # C compiler (for building native Neovim plugins like telescope-fzf-native)
     pkgs.gcc
   ];
