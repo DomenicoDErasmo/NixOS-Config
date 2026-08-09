@@ -14,6 +14,8 @@
     pkgs.rustfmt
     # Rust LSP
     pkgs.rust-analyzer
+    # Rust linter (cargo-clippy), used by rust-analyzer's checkOnSave
+    pkgs.clippy
     # Python type checker / LSP (global fallback; project devShells take
     # priority on PATH when present)
     pkgs.ty
