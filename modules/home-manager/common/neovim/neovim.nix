@@ -53,10 +53,13 @@
   xdg.configFile."nvim/init.lua".source = "${inputs.neovim-config}/init.lua";
   xdg.configFile."nvim/lua".source = "${inputs.neovim-config}/lua";
 
-  # Standard library source, for rust-analyzer to resolve std types (e.g.
-  # Vec) when there's no Cargo.toml to derive a sysroot from, e.g.
-  # leetcode.nvim's standalone problem files.
+  # Standard library source + compiled sysroot, for rust-analyzer to resolve
+  # std types (e.g. Vec) when there's no Cargo.toml to derive a sysroot from,
+  # e.g. leetcode.nvim's standalone problem files. rustc.unwrapped's output
+  # already has the lib/rustlib/<target>/lib layout rust-analyzer expects
+  # from a real sysroot, so this also sidesteps needing `rustc` on PATH.
   home.sessionVariables = {
     NVIM_RUST_SRC = "${pkgs.rustPlatform.rustLibSrc}";
+    NVIM_RUST_SYSROOT = "${pkgs.rustc.unwrapped}";
   };
 }

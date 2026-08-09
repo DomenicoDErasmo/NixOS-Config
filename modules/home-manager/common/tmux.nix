@@ -3,6 +3,7 @@
   programs.tmux = {
     enable = true;
     prefix = "C-Space";
+    keyMode = "vi";
     extraConfig = ''
       bind C-Space send-prefix
       set-option -g default-terminal "screen-256color"
