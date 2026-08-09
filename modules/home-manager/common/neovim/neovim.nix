@@ -12,6 +12,8 @@
     pkgs.lua-language-server
     # Rustfmt
     pkgs.rustfmt
+    # Rust LSP
+    pkgs.rust-analyzer
     # Python type checker / LSP (global fallback; project devShells take
     # priority on PATH when present)
     pkgs.ty
@@ -19,6 +21,8 @@
     pkgs.ruff
     # C compiler (for building native Neovim plugins like telescope-fzf-native)
     pkgs.gcc
+    # C/C++ LSP (clangd)
+    pkgs.clang-tools
   ];
 
   programs.neovim = {
@@ -48,4 +52,11 @@
   };
   xdg.configFile."nvim/init.lua".source = "${inputs.neovim-config}/init.lua";
   xdg.configFile."nvim/lua".source = "${inputs.neovim-config}/lua";
+
+  # Standard library source, for rust-analyzer to resolve std types (e.g.
+  # Vec) when there's no Cargo.toml to derive a sysroot from, e.g.
+  # leetcode.nvim's standalone problem files.
+  home.sessionVariables = {
+    NVIM_RUST_SRC = "${pkgs.rustPlatform.rustLibSrc}";
+  };
 }
