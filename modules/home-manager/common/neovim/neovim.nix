@@ -54,6 +54,7 @@
   };
   xdg.configFile."nvim/init.lua".source = "${inputs.neovim-config}/init.lua";
   xdg.configFile."nvim/lua".source = "${inputs.neovim-config}/lua";
+  xdg.configFile."clangd/config.yaml".source = "${inputs.neovim-config}/clangd/config.yaml";
 
   # Standard library source + compiled sysroot, for rust-analyzer to resolve
   # std types (e.g. Vec) when there's no Cargo.toml to derive a sysroot from,
