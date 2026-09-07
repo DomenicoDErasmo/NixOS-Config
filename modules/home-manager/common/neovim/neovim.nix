@@ -54,16 +54,28 @@
   };
   xdg.configFile."nvim/init.lua".source = "${inputs.neovim-config}/init.lua";
   xdg.configFile."nvim/lua".source = "${inputs.neovim-config}/lua";
-  # The static half (PathMatch, -std, -x) is authored in the neovim-config
-  # repo; the -isystem path is appended here as a second YAML document
-  # because it's a real nix store path and only Nix can compute it.
+  # Global clangd fallback for real libc++ headers (e.g. go-to-definition
+  # from project code into <algorithm>): those files live entirely outside
+  # any project's compile_commands.json, so clangd can't associate them
+  # with a translation unit and parses them with generic defaults instead
+  # - no -std flag, and guessed as Objective-C++ from the ambiguous .h
+  # extension. That leaves _LIBCPP_STD_VER undefined, greying out every
+  # version-gated block (e.g. C++20/23 <algorithm> additions). libcxx's own
+  # headers also cross-reference each other via angle-bracket #includes
+  # (e.g. <__config>), which only resolve via an explicit -isystem into
+  # their v1 directory.
+  #
+  # PathMatch is a name pattern rather than a literal store path so it
+  # survives libcxx version/hash changes; -isystem is a real Nix-computed
+  # store path (not typed in) for the same reason.
   xdg.configFile."clangd/config.yaml".text = ''
-    ${builtins.readFile "${inputs.neovim-config}/clangd/config.yaml"}
-    ---
     If:
       PathMatch: .*-libcxx-[0-9.]+-dev/include/c\+\+/v1/.*
     CompileFlags:
       Add:
+        - -xc++-header
+        - -std=c++23
+        - -stdlib=libc++
         - -isystem
         - ${pkgs.llvmPackages_21.libcxx.dev}/include/c++/v1
   '';
