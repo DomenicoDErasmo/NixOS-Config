@@ -54,7 +54,19 @@
   };
   xdg.configFile."nvim/init.lua".source = "${inputs.neovim-config}/init.lua";
   xdg.configFile."nvim/lua".source = "${inputs.neovim-config}/lua";
-  xdg.configFile."clangd/config.yaml".source = "${inputs.neovim-config}/clangd/config.yaml";
+  # The static half (PathMatch, -std, -x) is authored in the neovim-config
+  # repo; the -isystem path is appended here as a second YAML document
+  # because it's a real nix store path and only Nix can compute it.
+  xdg.configFile."clangd/config.yaml".text = ''
+    ${builtins.readFile "${inputs.neovim-config}/clangd/config.yaml"}
+    ---
+    If:
+      PathMatch: .*-libcxx-[0-9.]+-dev/include/c\+\+/v1/.*
+    CompileFlags:
+      Add:
+        - -isystem
+        - ${pkgs.llvmPackages_21.libcxx.dev}/include/c++/v1
+  '';
 
   # Standard library source + compiled sysroot, for rust-analyzer to resolve
   # std types (e.g. Vec) when there's no Cargo.toml to derive a sysroot from,
