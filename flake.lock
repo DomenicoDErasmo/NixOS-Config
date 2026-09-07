@@ -430,11 +430,11 @@
     "neovim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1788202281,
-        "narHash": "sha256-s668JN/1LbFIWTNDKf6FAsEvFkqfc40IVc03r0bwIYo=",
+        "lastModified": 1788807150,
+        "narHash": "sha256-tkQG8BtmW/vzcwKYwJXXGJgQhlDKt3bTK86EhcG8/x4=",
         "owner": "DomenicoDErasmo",
         "repo": "Neovim-Config",
-        "rev": "46c155ab44152954b1c8e9909220ad67bf126cd9",
+        "rev": "66967ae8cfb136daf234ac78337729a1b00beffc",
         "type": "github"
       },
       "original": {
