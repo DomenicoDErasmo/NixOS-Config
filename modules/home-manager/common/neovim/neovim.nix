@@ -23,6 +23,8 @@
     pkgs.ruff
     # C compiler (for building native Neovim plugins like telescope-fzf-native)
     pkgs.gcc
+    # Builds parsers for nvim-treesitter's `main` branch (:TSInstall/:TSUpdate)
+    pkgs.tree-sitter
     # C/C++ LSP (clangd)
     pkgs.clang-tools
   ];
