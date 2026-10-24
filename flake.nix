@@ -13,10 +13,11 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovimNightlyOverlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # No `inputs.nixpkgs.follows` here on purpose: the nightly package must be
+    # built against the overlay's own pinned nixpkgs so its store path matches
+    # what nix-community.cachix.org has prebuilt (see nix.settings in the
+    # NixOS configurations). Following our nixpkgs forces a local compile.
+    neovimNightlyOverlay.url = "github:nix-community/neovim-nightly-overlay";
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
