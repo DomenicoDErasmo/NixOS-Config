@@ -31,6 +31,8 @@
 
   programs.neovim = {
     enable = true;
+    # Sets EDITOR=nvim (e.g. for Claude Code's Ctrl-G), overriding NixOS's nano
+    defaultEditor = true;
     package = inputs.neovimNightlyOverlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
     withPython3 = false;
     withRuby = false;
@@ -88,6 +90,8 @@
   # already has the lib/rustlib/<target>/lib layout rust-analyzer expects
   # from a real sysroot, so this also sidesteps needing `rustc` on PATH.
   home.sessionVariables = {
+    # Checked before EDITOR by Claude Code's Ctrl-G
+    VISUAL = "nvim";
     NVIM_RUST_SRC = "${pkgs.rustPlatform.rustLibSrc}";
     NVIM_RUST_SYSROOT = "${pkgs.rustc.unwrapped}";
   };
